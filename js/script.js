@@ -1,0 +1,204 @@
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+});
+
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+const scrollThreshold = 100;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offsetTop = target.offsetTop - navbar.offsetHeight;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Active navigation link highlighting
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - navbar.offsetHeight - 100;
+        const sectionId = section.getAttribute('id');
+        const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (correspondingLink) {
+                correspondingLink.classList.add('active');
+            }
+        }
+    });
+});
+
+// Form submission handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Here you would normally send the data to a server
+        // For now, we'll just show an alert
+        alert('Thank you for your message! We will get back to you soon.');
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
+// Parallax effect for hero section
+const hero = document.querySelector('.hero-bg');
+if (hero) {
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.5;
+        hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    });
+}
+
+// Gallery lightbox functionality
+const galleryItems = document.querySelectorAll('.gallery-item');
+const body = document.body;
+
+// Create lightbox elements
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" class="lightbox-image">
+        <div class="lightbox-caption">
+            <h4></h4>
+            <p></p>
+        </div>
+    </div>
+`;
+body.appendChild(lightbox);
+
+const lightboxImage = lightbox.querySelector('.lightbox-image');
+const lightboxTitle = lightbox.querySelector('.lightbox-caption h4');
+const lightboxSubtitle = lightbox.querySelector('.lightbox-caption p');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+// Open lightbox
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('h4').textContent;
+        const subtitle = item.querySelector('p').textContent;
+        
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxTitle.textContent = title;
+        lightboxSubtitle.textContent = subtitle;
+        
+        lightbox.classList.add('active');
+        body.style.overflow = 'hidden';
+    });
+});
+
+// Close lightbox
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    body.style.overflow = '';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        body.style.overflow = '';
+    }
+});
+
+// Escape key to close lightbox
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        body.style.overflow = '';
+    }
+});
+
+// Counter animation for stats
+const stats = document.querySelectorAll('.stat-number');
+const animateCounter = (element, target) => {
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = element.dataset.suffix ? target + element.dataset.suffix : target + '+';
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + (element.dataset.suffix || '+');
+        }
+    }, 30);
+};
+
+// Intersection Observer for counter animation
+const observerOptions = {
+    threshold: 0.5,
+    rootMargin: '0px'
+};
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            const target = parseInt(entry.target.textContent);
+            animateCounter(entry.target, target);
+            entry.target.classList.add('animated');
+        }
+    });
+}, observerOptions);
+
+stats.forEach(stat => {
+    counterObserver.observe(stat);
+});
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+}); 
