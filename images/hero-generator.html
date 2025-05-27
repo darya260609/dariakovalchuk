@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Hero Background Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .canvas-container {
+            margin: 20px auto;
+            width: 1920px;
+            height: 1080px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        .controls {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .control-group {
+            margin: 10px 0;
+            text-align: left;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        input[type="color"] {
+            width: 50px;
+            height: 30px;
+            padding: 0;
+            border: none;
+            border-radius: 4px;
+        }
+        select, .format-select {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+        button {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #333;
+        }
+        .download-btn {
+            background: #4CAF50;
+        }
+        .download-btn:hover {
+            background: #45a049;
+        }
+        .preset-buttons {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .preset-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .preset-btn:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Luxury Hero Background Generator</h1>
+        <div class="canvas-container">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <label for="gradientStart">Gradient Start:</label>
+                <input type="color" id="gradientStart" value="#1a1a1a">
+            </div>
+            <div class="control-group">
+                <label for="gradientEnd">Gradient End:</label>
+                <input type="color" id="gradientEnd" value="#232323">
+            </div>
+            <div class="control-group">
+                <label for="accentColor">Accent Color:</label>
+                <input type="color" id="accentColor" value="#ffd700">
+            </div>
+            <div class="control-group">
+                <label for="patternType">Pattern Type:</label>
+                <select id="patternType">
+                    <option value="minimal">Minimal</option>
+                    <option value="geometric">Geometric</option>
+                    <option value="organic">Organic</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="overlayOpacity">Overlay Opacity:</label>
+                <input type="range" id="overlayOpacity" min="0" max="100" value="20">
+            </div>
+            <div class="control-group">
+                <label for="patternOpacity">Pattern Opacity:</label>
+                <input type="range" id="patternOpacity" min="0" max="100" value="8">
+            </div>
+            <div class="control-group">
+                <label for="glowIntensity">Glow Intensity:</label>
+                <input type="range" id="glowIntensity" min="0" max="100" value="20">
+            </div>
+            <div class="control-group">
+                <label for="noiseAmount">Noise Amount:</label>
+                <input type="range" id="noiseAmount" min="0" max="100" value="0">
+            </div>
+            <div class="control-group">
+                <label for="formatSelect">Export Format:</label>
+                <select id="formatSelect" class="format-select">
+                    <option value="png">PNG (bezztrátový)</option>
+                    <option value="jpg">JPG (komprimovaný)</option>
+                </select>
+            </div>
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="applyPreset('darkGold')">Dark Gold</button>
+                <button class="preset-btn" onclick="applyPreset('royalPurple')">Royal Purple</button>
+                <button class="preset-btn" onclick="applyPreset('deepOcean')">Deep Ocean</button>
+                <button class="preset-btn" onclick="applyPreset('emerald')">Emerald</button>
+                <button class="preset-btn" onclick="applyPreset('midnight')">Midnight</button>
+            </div>
+            <button onclick="generateBackground()">Generate New</button>
+            <button class="download-btn" onclick="downloadImage()">Download Image</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 1920;
+        canvas.height = 1080;
+
+        const presets = {
+            darkGold: {
+                gradientStart: '#1a1a1a',
+                gradientEnd: '#2a2a2a',
+                accentColor: '#ffd700',
+                patternType: 'luxury',
+                overlayOpacity: 30,
+                patternOpacity: 15,
+                glowIntensity: 40,
+                noiseAmount: 2
+            },
+            royalPurple: {
+                gradientStart: '#2c1a3a',
+                gradientEnd: '#1a1a2a',
+                accentColor: '#b19cd9',
+                patternType: 'geometric',
+                overlayOpacity: 25,
+                patternOpacity: 10,
+                glowIntensity: 30,
+                noiseAmount: 1
+            },
+            deepOcean: {
+                gradientStart: '#1a2a3a',
+                gradientEnd: '#0a1a2a',
+                accentColor: '#00bfff',
+                patternType: 'organic',
+                overlayOpacity: 20,
+                patternOpacity: 8,
+                glowIntensity: 20,
+                noiseAmount: 1
+            },
+            emerald: {
+                gradientStart: '#1a2a1a',
+                gradientEnd: '#0a1a0a',
+                accentColor: '#50c878',
+                patternType: 'minimal',
+                overlayOpacity: 20,
+                patternOpacity: 8,
+                glowIntensity: 20,
+                noiseAmount: 0
+            },
+            midnight: {
+                gradientStart: '#0a0a1a',
+                gradientEnd: '#1a1a2a',
+                accentColor: '#ffffff',
+                patternType: 'luxury',
+                overlayOpacity: 25,
+                patternOpacity: 10,
+                glowIntensity: 20,
+                noiseAmount: 0
+            }
+        };
+
+        function applyPreset(presetName) {
+            const preset = presets[presetName];
+            document.getElementById('gradientStart').value = preset.gradientStart;
+            document.getElementById('gradientEnd').value = preset.gradientEnd;
+            document.getElementById('accentColor').value = preset.accentColor;
+            document.getElementById('patternType').value = preset.patternType;
+            document.getElementById('overlayOpacity').value = preset.overlayOpacity;
+            document.getElementById('patternOpacity').value = preset.patternOpacity;
+            document.getElementById('glowIntensity').value = preset.glowIntensity;
+            document.getElementById('noiseAmount').value = preset.noiseAmount;
+            generateBackground();
+        }
+
+        function drawPattern(type, opacity) {
+            ctx.save();
+            ctx.globalAlpha = opacity;
+            const accentColor = document.getElementById('accentColor').value;
+
+            switch(type) {
+                case 'geometric':
+                    for (let i = 0; i < canvas.width; i += 60) {
+                        for (let j = 0; j < canvas.height; j += 60) {
+                            ctx.beginPath();
+                            ctx.moveTo(i, j);
+                            ctx.lineTo(i + 30, j + 30);
+                            ctx.lineTo(i, j + 60);
+                            ctx.closePath();
+                            ctx.strokeStyle = accentColor;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                    break;
+                case 'organic':
+                    for (let i = 0; i < canvas.width; i += 40) {
+                        for (let j = 0; j < canvas.height; j += 40) {
+                            ctx.beginPath();
+                            ctx.arc(i, j, 20, 0, Math.PI * 2);
+                            ctx.strokeStyle = accentColor;
+                            ctx.lineWidth = 0.3;
+                            ctx.stroke();
+                        }
+                    }
+                    break;
+                case 'minimal':
+                    for (let i = 0; i < canvas.width; i += 80) {
+                        for (let j = 0; j < canvas.height; j += 80) {
+                            ctx.beginPath();
+                            ctx.moveTo(i, j);
+                            ctx.lineTo(i + 40, j + 40);
+                            ctx.strokeStyle = accentColor;
+                            ctx.lineWidth = 0.2;
+                            ctx.stroke();
+                        }
+                    }
+                    break;
+                case 'luxury':
+                    for (let i = 0; i < canvas.width; i += 100) {
+                        for (let j = 0; j < canvas.height; j += 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(i, j);
+                            ctx.lineTo(i + 50, j + 50);
+                            ctx.lineTo(i + 100, j);
+                            ctx.lineTo(i + 50, j - 50);
+                            ctx.closePath();
+                            ctx.strokeStyle = accentColor;
+                            ctx.lineWidth = 0.3;
+                            ctx.stroke();
+                        }
+                    }
+                    break;
+            }
+            ctx.restore();
+        }
+
+        function addGlow(intensity) {
+            ctx.save();
+            ctx.globalAlpha = intensity / 100;
+            const gradient = ctx.createRadialGradient(
+                canvas.width / 2, canvas.height / 2, 0,
+                canvas.width / 2, canvas.height / 2, canvas.width / 2
+            );
+            gradient.addColorStop(0, document.getElementById('accentColor').value);
+            gradient.addColorStop(1, 'transparent');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.restore();
+        }
+
+        function generateBackground() {
+            const gradientStart = document.getElementById('gradientStart').value;
+            const gradientEnd = document.getElementById('gradientEnd').value;
+            const overlayOpacity = document.getElementById('overlayOpacity').value / 100;
+            const patternOpacity = document.getElementById('patternOpacity').value / 100;
+            const glowIntensity = document.getElementById('glowIntensity').value;
+            const noiseAmount = document.getElementById('noiseAmount').value / 100;
+            const patternType = document.getElementById('patternType').value;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, gradientStart);
+            gradient.addColorStop(1, gradientEnd);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add glow effect
+            addGlow(glowIntensity);
+
+            // Add pattern
+            drawPattern(patternType, patternOpacity);
+
+            // Add vignette effect
+            const vignette = ctx.createRadialGradient(
+                canvas.width / 2, canvas.height / 2, 0,
+                canvas.width / 2, canvas.height / 2, canvas.width / 2
+            );
+            vignette.addColorStop(0, 'rgba(0, 0, 0, 0)');
+            vignette.addColorStop(1, `rgba(0, 0, 0, ${overlayOpacity})`);
+            ctx.fillStyle = vignette;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Add subtle noise
+            ctx.save();
+            ctx.globalAlpha = noiseAmount;
+            for (let i = 0; i < canvas.width; i += 2) {
+                for (let j = 0; j < canvas.height; j += 2) {
+                    const noise = Math.random() * 255;
+                    ctx.fillStyle = `rgba(${noise}, ${noise}, ${noise}, 1)`;
+                    ctx.fillRect(i, j, 1, 1);
+                }
+            }
+            ctx.restore();
+        }
+
+        function downloadImage() {
+            const format = document.getElementById('formatSelect').value;
+            const link = document.createElement('a');
+            if (format === 'png') {
+                link.download = 'hero-bg.png';
+                link.href = canvas.toDataURL('image/png');
+            } else {
+                link.download = 'hero-bg.jpg';
+                link.href = canvas.toDataURL('image/jpeg', 1.0);
+            }
+            link.click();
+        }
+
+        // Generate initial background
+        generateBackground();
+
+        // Add event listeners for controls
+        document.getElementById('gradientStart').addEventListener('input', generateBackground);
+        document.getElementById('gradientEnd').addEventListener('input', generateBackground);
+        document.getElementById('accentColor').addEventListener('input', generateBackground);
+        document.getElementById('patternType').addEventListener('change', generateBackground);
+        document.getElementById('overlayOpacity').addEventListener('input', generateBackground);
+        document.getElementById('patternOpacity').addEventListener('input', generateBackground);
+        document.getElementById('glowIntensity').addEventListener('input', generateBackground);
+        document.getElementById('noiseAmount').addEventListener('input', generateBackground);
+        document.getElementById('formatSelect').addEventListener('change', generateBackground);
+    </script>
+</body>
+</html> 

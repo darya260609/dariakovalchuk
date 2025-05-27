@@ -27,12 +27,18 @@
             <div class="nav-wrapper">
                 <a href="#home" class="logo">DK</a>
                 <div class="nav-menu" id="navMenu">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#agency" class="nav-link">Agency</a>
-                    <a href="#gallery" class="nav-link">Gallery</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                    <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                    <a href="#agency" class="nav-link" data-i18n="nav.agency">Agency</a>
+                    <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="cs">CS</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="uk">UK</button>
+                    </div>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -51,13 +57,13 @@
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
                 <h1 class="hero-title">
-                    <span class="line-1">Elevate Your</span>
-                    <span class="line-2">Digital Presence</span>
+                    <span class="line-1" data-i18n="hero.line1">Elevate Your</span>
+                    <span class="line-2" data-i18n="hero.line2">Digital Presence</span>
                 </h1>
-                <p class="hero-subtitle">Premium solutions for ambitious brands</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Premium solutions for ambitious brands</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Get Started</a>
+                    <a href="#services" class="btn btn-outline" data-i18n="hero.cta2">Explore Services</a>
                 </div>
             </div>
         </div>
@@ -70,7 +76,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n="about.title">About Me</h2>
                 <div class="title-line"></div>
             </div>
             <div class="about-content">
@@ -82,21 +88,21 @@
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <h3>Daria Kovalchuk</h3>
-                    <p class="subtitle">Digital Strategist & Creative Director</p>
-                    <p>With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.</p>
-                    <p>I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.</p>
+                    <p class="subtitle" data-i18n="about.subtitle">Digital Strategist & Creative Director</p>
+                    <p data-i18n="about.description1">With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.</p>
+                    <p data-i18n="about.description2">I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.</p>
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
+                            <span class="stat-label" data-i18n="about.stats.projects">Projects Completed</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">10+</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-label" data-i18n="about.stats.experience">Years Experience</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">95%</span>
-                            <span class="stat-label">Client Satisfaction</span>
+                            <span class="stat-label" data-i18n="about.stats.satisfaction">Client Satisfaction</span>
                         </div>
                     </div>
                 </div>
@@ -108,31 +114,31 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Services</h2>
+                <h2 class="section-title" data-i18n="services.title">Services</h2>
                 <div class="title-line"></div>
-                <p class="section-subtitle">Tailored solutions for premium brands</p>
+                <p class="section-subtitle" data-i18n="services.subtitle">Tailored solutions for premium brands</p>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3>Brand Design</h3>
-                    <p>Creating distinctive visual identities that embody luxury and sophistication</p>
+                    <h3 data-i18n="services.brand.title">Brand Design</h3>
+                    <p data-i18n="services.brand.description">Creating distinctive visual identities that embody luxury and sophistication</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3>Digital Marketing</h3>
-                    <p>Strategic campaigns that elevate your brand presence and drive meaningful engagement</p>
+                    <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
+                    <p data-i18n="services.marketing.description">Strategic campaigns that elevate your brand presence and drive meaningful engagement</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3>Web Development</h3>
-                    <p>Bespoke websites that combine cutting-edge technology with timeless design</p>
+                    <h3 data-i18n="services.web.title">Web Development</h3>
+                    <p data-i18n="services.web.description">Bespoke websites that combine cutting-edge technology with timeless design</p>
                 </div>
             </div>
         </div>
@@ -142,29 +148,29 @@
     <section id="agency" class="agency">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Our Agency</h2>
+                <h2 class="section-title" data-i18n="agency.title">Our Agency</h2>
                 <div class="title-line"></div>
             </div>
             <div class="agency-content">
                 <div class="agency-text" data-aos="fade-right">
-                    <h3>Where Vision Meets Excellence</h3>
-                    <p>Our boutique agency specializes in creating premium digital experiences for discerning clients. We combine strategic thinking with meticulous attention to detail to deliver results that exceed expectations.</p>
+                    <h3 data-i18n="agency.subtitle">Where Vision Meets Excellence</h3>
+                    <p data-i18n="agency.description">Our boutique agency specializes in creating premium digital experiences for discerning clients. We combine strategic thinking with meticulous attention to detail to deliver results that exceed expectations.</p>
                     <div class="agency-features">
                         <div class="feature">
                             <i class="fas fa-check"></i>
-                            <span>Personalized Approach</span>
+                            <span data-i18n="agency.features.approach">Personalized Approach</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check"></i>
-                            <span>Premium Quality</span>
+                            <span data-i18n="agency.features.quality">Premium Quality</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check"></i>
-                            <span>Timeless Design</span>
+                            <span data-i18n="agency.features.design">Timeless Design</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-check"></i>
-                            <span>Strategic Innovation</span>
+                            <span data-i18n="agency.features.innovation">Strategic Innovation</span>
                         </div>
                     </div>
                 </div>
@@ -179,9 +185,9 @@
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Portfolio Gallery</h2>
+                <h2 class="section-title" data-i18n="gallery.title">Portfolio Gallery</h2>
                 <div class="title-line"></div>
-                <p class="section-subtitle">A curated selection of our finest work</p>
+                <p class="section-subtitle" data-i18n="gallery.subtitle">A curated selection of our finest work</p>
             </div>
             <div class="gallery-grid">
                 <!-- Gallery items with placeholders -->
@@ -247,9 +253,9 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
                 <div class="title-line"></div>
-                <p class="section-subtitle">Let's create something extraordinary together</p>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Let's create something extraordinary together</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info" data-aos="fade-right">
@@ -283,18 +289,18 @@
                 </div>
                 <form class="contact-form" data-aos="fade-left">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" data-i18n-placeholder="contact.form.name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.form.email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea placeholder="Your Message" data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -304,14 +310,21 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Daria Kovalchuk. All rights reserved.</p>
-                <p class="footer-tagline">Crafted with excellence</p>
+                <p data-i18n="footer.rights">&copy; 2024 Daria Kovalchuk. All rights reserved.</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Crafted with excellence</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module">
+        // Error handling for module loading
+        window.addEventListener('error', function(e) {
+            console.error('Module loading error:', e);
+        });
+    </script>
+    <script type="module" src="js/translations.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html> 

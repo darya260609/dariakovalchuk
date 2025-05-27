@@ -1,3 +1,5 @@
+import { translations } from './translations.js';
+
 // Initialize AOS (Animate On Scroll)
 AOS.init({
     duration: 1000,
@@ -201,4 +203,56 @@ stats.forEach(stat => {
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+});
+
+// Language switching functionality
+function setLanguage(lang) {
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = translations[lang];
+        for (const k of keys) {
+            value = value[k];
+        }
+        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = value;
+        } else {
+            element.textContent = value;
+        }
+    });
+
+    // Update all placeholder translations
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        const keys = key.split('.');
+        let value = translations[lang];
+        for (const k of keys) {
+            value = value[k];
+        }
+        element.placeholder = value;
+    });
+
+    // Save language preference
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// Initialize language
+const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+setLanguage(savedLang);
+
+// Add click handlers for language buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        setLanguage(lang);
+    });
 }); 
