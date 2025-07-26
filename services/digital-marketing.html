@@ -44,7 +44,7 @@
                     
                     <!-- Courses Dropdown -->
                     <div class="nav-dropdown">
-                        <a href="../index.html#courses" class="nav-link dropdown-toggle">Kurz</a>
+                        <a href="../index.html#courses" class="nav-link dropdown-toggle">Kurzy</a>
                         <div class="dropdown-menu">
                             <a href="../courses/course-1.html" class="dropdown-item">Kurz 1</a>
                             <a href="../courses/course-2.html" class="dropdown-item">Kurz 2</a>
@@ -57,7 +57,7 @@
                     
                     <!-- Language Switcher Dropdown -->
                     <div class="nav-dropdown language-dropdown">
-                        <button class="nav-link dropdown-toggle lang-toggle">
+                        <button class="nav-link dropdown-toggle lang-toggle active">
                             <span class="flag-icon">🇨🇿</span>
                             <span class="lang-text">CS</span>
                         </button>
@@ -66,7 +66,7 @@
                                 <span class="flag-icon">🇺🇸</span>
                                 <span>English</span>
                             </button>
-                            <button class="dropdown-item lang-option" data-lang="cs">
+                            <button class="dropdown-item lang-option active" data-lang="cs">
                                 <span class="flag-icon">🇨🇿</span>
                                 <span>Čeština</span>
                             </button>
@@ -103,7 +103,7 @@
                     <span>Služby</span>
                 </a>
                 <i class="fas fa-chevron-right breadcrumb-separator"></i>
-                <span class="breadcrumb-item active">Automatizace</span>
+                <span class="breadcrumb-item active">Digitální Marketing</span>
             </nav>
         </div>
     </div>
@@ -116,10 +116,10 @@
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
                 <h1 class="hero-title">
-                    <span class="line-1">Automatizace</span>
-                    <span class="line-2">Inteligentní řešení pro váš úspěch</span>
+                    <span class="line-1" data-i18n="services.marketing.title">Digitální Marketing</span>
+                    <span class="line-2" data-i18n="services.marketing.subtitle">Strategické kampaně pro váš úspěch</span>
                 </h1>
-                <p class="hero-subtitle">Automatizujeme vaše procesy pro zvýšení efektivity a úsporu času</p>
+                <p class="hero-subtitle" data-i18n="services.marketing.description">Profesionální digitální marketing, který pozvedává přítomnost vaší značky</p>
                 <div class="hero-cta">
                     <a href="../index.html#contact" class="btn btn-primary">Kontaktovat</a>
                     <a href="../index.html#services" class="btn btn-outline">
@@ -136,8 +136,8 @@
         <div class="container">
             <div class="service-content">
                 <div class="service-text" data-aos="fade-right">
-                    <h2>Automatizace</h2>
-                    <p>Inteligentní automatizace procesů pro zvýšení efektivity a úsporu času. Naše řešení kombinují nejmodernější technologie s praktickým přístupem k optimalizaci vašich obchodních procesů.</p>
+                    <h2 data-i18n="services.marketing.title">Digitální Marketing</h2>
+                    <p data-i18n="services.marketing.description">Strategické kampaně, které pozvedají přítomnost vaší značky a podporují smysluplnou interakci. Naše digitální marketingové strategie jsou navrženy tak, aby maximalizovaly ROI a budovaly dlouhodobé vztahy s vaším publikem.</p>
                     
                     <h3>Co zahrnuje naše služba:</h3>
                     <ul>
@@ -172,6 +172,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="module" src="../js/script.js"></script>
+    <script src="../js/script-nomodule.js"></script>
 </body>
 </html> 

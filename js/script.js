@@ -346,7 +346,12 @@ function setLanguage(lang) {
 }
 
 // Initialize language immediately
-const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+let savedLang;
+try {
+    savedLang = localStorage.getItem('preferredLanguage') || 'en';
+} catch (e) {
+    savedLang = 'en'; // Fallback if localStorage is not available
+}
 
 // Set language immediately and also on DOM ready
 setLanguage(savedLang);

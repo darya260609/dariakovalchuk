@@ -44,7 +44,7 @@
                     
                     <!-- Courses Dropdown -->
                     <div class="nav-dropdown">
-                        <a href="#courses" class="nav-link dropdown-toggle" data-i18n="nav.courses">Kurz</a>
+                        <a href="#courses" class="nav-link dropdown-toggle" data-i18n="nav.courses">Kurzy</a>
                         <div class="dropdown-menu">
                             <a href="courses/course-1.html" class="dropdown-item" data-i18n="nav.coursesItems.course1">Kurz 1</a>
                             <a href="courses/course-2.html" class="dropdown-item" data-i18n="nav.coursesItems.course2">Kurz 2</a>
@@ -57,12 +57,12 @@
                     
                     <!-- Language Switcher Dropdown -->
                     <div class="nav-dropdown language-dropdown">
-                        <button class="nav-link dropdown-toggle lang-toggle" data-i18n="nav.language">
+                        <button class="nav-link dropdown-toggle lang-toggle active">
                             <span class="flag-icon">🇺🇸</span>
                             <span class="lang-text">EN</span>
                         </button>
                         <div class="dropdown-menu lang-menu">
-                            <button class="dropdown-item lang-option" data-lang="en">
+                            <button class="dropdown-item lang-option active" data-lang="en">
                                 <span class="flag-icon">🇺🇸</span>
                                 <span>English</span>
                             </button>
@@ -383,13 +383,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="module">
-        // Error handling for module loading
-        window.addEventListener('error', function(e) {
-            console.error('Module loading error:', e);
-        });
-    </script>
-    <script type="module" src="js/translations.js"></script>
-    <script type="module" src="js/script.js"></script>
+    <script src="js/script-nomodule.js"></script>
 </body>
 </html> 
