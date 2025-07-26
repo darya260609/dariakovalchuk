@@ -20,17 +20,17 @@ export const enTexts = {
         contact: "Contact"
     },
     hero: {
-        line1: "Elevate Your",
-        line2: "Digital Presence",
-        subtitle: "Premium solutions for ambitious brands",
+        line1: "Target Vision",
+        line2: "Digital Excellence",
+        subtitle: "Premium digital solutions for ambitious brands",
         cta1: "Get Started",
         cta2: "Explore Services"
     },
     about: {
         title: "About Us",
-        subtitle: "Digital Strategist & Creative Director",
-        description1: "With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.",
-        description2: "I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
+        subtitle: "Company Director",
+        description1: "Target Vision is a leading digital agency specializing in creating luxurious digital experiences that captivate and convert. Our approaches combine strategic thinking with aesthetic excellence.",
+        description2: "We believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
         member2: {
             name: "Name Surname",
             subtitle: "Position",
@@ -109,7 +109,7 @@ export const enTexts = {
         }
     },
     footer: {
-        rights: "All rights reserved",
+        rights: "© 2024 Target Vision. All rights reserved",
         tagline: "Crafted with excellence"
     }
 }; 

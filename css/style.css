@@ -167,6 +167,8 @@ img {
     line-height: 1;
     display: flex;
     align-items: center;
+    height: 100%;
+    justify-content: center;
 }
 
 .logo::after {
@@ -197,6 +199,8 @@ img {
     display: flex;
     align-items: center;
     padding: 0.5rem 0;
+    height: 100%;
+    justify-content: center;
 }
 
 .nav-link:hover {
@@ -1445,15 +1449,7 @@ img {
     }
     
     .lang-toggle {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0.75rem 1.5rem;
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-        margin-bottom: 0.5rem;
+        display: none; /* Skryjeme toggle button na mobilu */
     }
     
     .lang-menu {
@@ -1465,39 +1461,76 @@ img {
         border: none;
         box-shadow: none;
         margin-top: 0;
-        padding: 0;
-        border-radius: 8px;
-        display: none;
+        padding: 8px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column; /* Změněno na column pro vertikální layout */
+        gap: 6px;
         min-width: auto;
         right: auto;
         left: auto;
         z-index: 1002;
         width: 100%;
-        max-width: 280px;
-    }
-    
-    .lang-option {
-        padding: 0.75rem 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
+        max-width: 200px; /* Zmenšená šířka pro vertikální layout */
         justify-content: center;
         align-items: center;
     }
     
-    .lang-option:last-child {
+
+    
+    .lang-option {
+        padding: 0.7rem 1rem;
         border-bottom: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        flex-shrink: 0;
+        width: 100%; /* Plná šířka pro vertikální layout */
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.7);
+        transition: all 0.25s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+    }
+    
+    .lang-option .flag-icon {
+        font-size: 1.1rem;
+        margin-right: 8px; /* Mezera mezi vlajkou a textem */
+        margin-bottom: 0;
+    }
+    
+    .lang-option span:not(.flag-icon) {
+        font-size: 0.85rem;
+        font-weight: 500;
     }
     
     .lang-option:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
     }
     
-    .lang-option.active::after {
-        right: 1.5rem;
+    .lang-option.active {
+        background: var(--primary-color);
+        color: var(--text-white);
+        box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
+        transform: translateY(-2px);
+        border-color: var(--primary-color);
+    }
+    
+    .lang-option.active:hover {
+        background: var(--primary-color);
+        color: var(--text-white);
+    }
+    
+    .language-dropdown .lang-menu {
+        display: flex !important; /* Vždy zobrazeno na mobilu */
     }
     
     .language-dropdown.active .lang-menu {
-        display: block;
+        display: flex; /* Vždy zobrazeno na mobilu */
     }
     
     /* Legacy language switcher styles for backward compatibility */

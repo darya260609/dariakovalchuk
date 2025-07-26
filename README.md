@@ -1,4 +1,4 @@
-# Daria Kovalchuk - Luxury Digital Solutions Website
+# Target Vision - Luxury Digital Solutions Website
 
 A modern, luxurious static website designed for marketing and product presentation, perfect for hosting on GitHub Pages.
 
@@ -15,7 +15,7 @@ A modern, luxurious static website designed for marketing and product presentati
 ## 📁 Project Structure
 
 ```
-dariakovalchuk/
+targetvision/
 ├── index.html          # Main HTML file
 ├── css/
 │   └── style.css      # All styles

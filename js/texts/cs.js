@@ -20,17 +20,17 @@ export const csTexts = {
         contact: "Kontakt"
     },
     hero: {
-        line1: "Pozvedněte svou",
-        line2: "Digitální Prezenci",
-        subtitle: "Prémiová řešení pro ambiciózní značky",
+        line1: "Target Vision",
+        line2: "Digitální Excelence",
+        subtitle: "Prémiová digitální řešení pro ambiciózní značky",
         cta1: "Začít",
         cta2: "Prozkoumat Služby"
     },
     about: {
         title: "O nás",
-        subtitle: "Digitální Strategistka & Kreativní Ředitelka",
-        description1: "S více než desetiletou zkušeností v digitálním marketingu a rozvoji značek se specializuji na vytváření luxusních digitálních zážitků, které zaujmou a konvertují. Můj přístup kombinuje strategické myšlení s estetickou dokonalostí.",
-        description2: "Věřím v sílu minimalismu, elegance a účelného designu pro vyprávění poutavých příběhů značek, které rezonují se sofistikovaným publikem.",
+        subtitle: "Ředitelka společnosti",
+        description1: "Target Vision je přední digitální agentura specializující se na vytváření luxusních digitálních zážitků, které fascinují a konvertují. Naše přístupy kombinují strategické myšlení s estetickou dokonalostí.",
+        description2: "Věříme v sílu minimalismu, elegance a účelového designu pro vyprávění přesvědčivých příběhů značek, které rezonují se sofistikovaným publikem.",
         member2: {
             name: "Jméno Příjmení",
             subtitle: "Pozice",
@@ -109,7 +109,7 @@ export const csTexts = {
         }
     },
     footer: {
-        rights: "Všechna práva vyhrazena",
+        rights: "© 2024 Target Vision. Všechna práva vyhrazena",
         tagline: "Vytvořeno s excelencí"
     }
 }; 

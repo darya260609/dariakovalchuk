@@ -21,17 +21,17 @@ const translations = {
             language: "Language"
         },
         hero: {
-            line1: "Elevate Your",
-            line2: "Digital Presence",
-            subtitle: "Premium solutions for ambitious brands",
+            line1: "Target Vision",
+            line2: "Digital Excellence",
+            subtitle: "Premium digital solutions for ambitious brands",
             cta1: "Get Started",
             cta2: "Explore Services"
         },
         about: {
             title: "About Us",
-            subtitle: "Digital Strategist & Creative Director",
-            description1: "With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.",
-            description2: "I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
+            subtitle: "Company Director",
+            description1: "Target Vision is a leading digital agency specializing in creating luxurious digital experiences that captivate and convert. Our approaches combine strategic thinking with aesthetic excellence.",
+            description2: "We believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
             member2: {
                 name: "Name Surname",
                 subtitle: "Position",
@@ -87,7 +87,7 @@ const translations = {
             }
         },
         footer: {
-            rights: "© 2024 Daria Kovalchuk. All rights reserved.",
+            rights: "© 2024 Target Vision. All rights reserved.",
             tagline: "Crafted with excellence"
         }
     },
@@ -112,17 +112,17 @@ const translations = {
             language: "Jazyk"
         },
         hero: {
-            line1: "Pozvedněte svou",
-            line2: "Digitální přítomnost",
-            subtitle: "Prémiová řešení pro ambiciózní značky",
+            line1: "Target Vision",
+            line2: "Digitální Excelence",
+            subtitle: "Prémiová digitální řešení pro ambiciózní značky",
             cta1: "Začít",
             cta2: "Prozkoumat služby"
         },
         about: {
             title: "O nás",
-            subtitle: "Digitální stratég a kreativní ředitel",
-            description1: "S více než desetiletou zkušeností v digitálním marketingu a rozvoji značek se specializuji na vytváření luxusních digitálních zážitků, které fascinují a konvertují. Můj přístup kombinuje strategické myšlení s estetickou dokonalostí.",
-            description2: "Věřím v sílu minimalismu, elegance a účelného designu pro vyprávění přesvědčivých příběhů značek, které rezonují se sofistikovaným publikem.",
+            subtitle: "Ředitelka společnosti",
+            description1: "Target Vision je přední digitální agentura specializující se na vytváření luxusních digitálních zážitků, které fascinují a konvertují. Naše přístupy kombinují strategické myšlení s estetickou dokonalostí.",
+            description2: "Věříme v sílu minimalismu, elegance a účelového designu pro vyprávění přesvědčivých příběhů značek, které rezonují se sofistikovaným publikem.",
             member2: {
                 name: "Jméno Příjmení",
                 subtitle: "Pozice",
@@ -183,7 +183,7 @@ const translations = {
             }
         },
         footer: {
-            rights: "© 2024 Daria Kovalchuk. Všechna práva vyhrazena.",
+            rights: "© 2024 Target Vision. Všechna práva vyhrazena.",
             tagline: "Vytvořeno s excelencí"
         }
     },
