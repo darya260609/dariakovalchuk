@@ -33,7 +33,7 @@ const translations = {
             cta2: "Explore Services"
         },
         about: {
-            title: "About Me",
+            title: "About Us",
             subtitle: "Company Director & Creative Expert",
             description1: "I'm Daria Kovalchuk - a recognized expert in targeted advertising with over 6 years of experience. I specialize in Meta Ads and help entrepreneurs transform their business through high-performance advertising campaigns.",
             description2: "Throughout my career, I've launched hundreds of successful campaigns, trained dozens of new targetologists, and achieved exceptional results for clients across various industries. My methodologies guarantee measurable growth and ROI.",
@@ -251,7 +251,7 @@ const translations = {
             cta2: "Prozkoumat služby"
         },
         about: {
-            title: "O mně",
+            title: "O nás",
             subtitle: "Ředitelka společnosti & Kreativní expertka",
             description1: "Jsem Daria Kovalchuk - uznávaná expertka na targetovanou reklamu s více než 6 lety zkušeností. Specializuji se na Meta Ads a pomáhám podnikatelům transformovat jejich byznys prostřednictvím vysoce výkonných reklamních kampaní.",
             description2: "Za svou kariéru jsem spustila stovky úspěšných kampaní, vycvičila desítky nových targetologů a dosáhla výjimečných výsledků pro klienty z různých odvětví. Moje metodiky zaručují měřitelný růst a ROI.",
@@ -474,7 +474,7 @@ const translations = {
             cta2: "Изучить услуги"
         },
         about: {
-            title: "Обо мне",
+            title: "О нас",
             subtitle: "Директор компании & Креативный эксперт",
             description1: "Я Дарья Ковальчук - признанный эксперт по таргетированной рекламе с более чем 6-летним опытом. Специализируюсь на Meta Ads и помогаю предпринимателям трансформировать свой бизнес через высокоэффективные рекламные кампании.",
             description2: "За свою карьеру я запустила сотни успешных кампаний, обучила десятки новых таргетологов и достигла исключительных результатов для клиентов из различных отраслей. Мои методики гарантируют измеримый рост и ROI.",
@@ -692,7 +692,7 @@ const translations = {
             cta2: "Вивчити послуги"
         },
         about: {
-            title: "Про мене",
+            title: "Про нас",
             subtitle: "Директор компанії & Креативний експерт",
             description1: "Я Дарія Ковальчук - визнаний експерт з таргетованої реклами з понад 6-річним досвідом. Спеціалізуюся на Meta Ads і допомагаю підприємцям трансформувати свій бізнес через високоефективні рекламні кампанії.",
             description2: "За свою кар'єру я запустила сотні успішних кампаній, навчила десятки нових таргетологів і досягла винятковихрезультатів для клієнтів з різних галузей. Мої методики гарантують вимірювальний ріст і ROI.",

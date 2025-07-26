@@ -71,8 +71,8 @@
         .pricing-card.featured::before {
             content: attr(data-label);
             position: absolute;
-            top: 30px;
-            right: -45px;
+            top: 35px;
+            right: -50px;
             background: #ff4757;
             color: white;
             padding: 10px 50px;
@@ -124,14 +124,7 @@
             padding: 15px 0;
             border-bottom: 1px solid #eee;
             position: relative;
-            padding-left: 30px;
-        }
-        
-        .module-list li::before {
-            content: "📚";
-            position: absolute;
-            left: 0;
-            top: 15px;
+            padding-left: 0;
         }
         
         .feature-list {
@@ -202,6 +195,12 @@
             
             .price {
                 font-size: 2rem;
+            }
+            
+            /* Audience grid responsivní layout */
+            .audience-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
             }
         }
     </style>
@@ -452,7 +451,7 @@
             <div class="course-section" data-aos="fade-up">
                 <h2 style="margin-bottom: 2rem;"><i class="fas fa-users" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.audience.title">Pro koho je tento kurz</span></h2>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div class="audience-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                     <div>
                         <h3 style="color: #28a745; margin-bottom: 1rem;" data-i18n="course.audience.for.title">✅ Kurz JE pro vás, pokud:</h3>
                         <ul class="feature-list">

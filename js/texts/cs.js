@@ -68,7 +68,7 @@ export const csTexts = {
             support: "Kurz je postaven tak, abyste cítili podporu v každé fázi a garantovaně dosáhli výsledku!"
         },
         instructor: {
-            title: "O mně",
+            title: "O nás",
             intro: "Jmenuji se Daria Kovalchuk. Pomáhám začátečníkům pochopit targetovanou reklamu a spouštět své první úspěšné kampaně na Facebooku a Instagramu.",
             experience: "Pracuji v targetu již více než 4,5 roku, za tu dobu jsem spustila stovky reklamních kampaní a pomohla svým klientům zvýšit příjmy a najít nové zákazníky.",
             methodology: "Tento kurz jsem vytvořila společně s profesionálním metodikem, aby byla výuka maximálně srozumitelná, strukturovaná a dávala garantovaný výsledek.",

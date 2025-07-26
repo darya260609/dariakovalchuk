@@ -68,7 +68,7 @@ export const enTexts = {
             support: "The course is built so you feel supported at every stage and guaranteed to achieve results!"
         },
         instructor: {
-            title: "About Me",
+            title: "About Us",
             intro: "My name is Daria Kovalchuk. I help beginners understand targeted advertising and launch their first successful campaigns on Facebook and Instagram.",
             experience: "I've been working in targeting for more than 4.5 years, during which time I've launched hundreds of advertising campaigns, helping my clients increase revenue and find new customers.",
             methodology: "I created this course together with a professional methodologist to make the training as clear, structured, and results-guaranteed as possible.",
