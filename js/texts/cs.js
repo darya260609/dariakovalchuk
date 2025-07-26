@@ -1,10 +1,22 @@
 export const csTexts = {
     nav: {
         home: "Domů",
-        about: "O mně",
+        about: "O nás",
         services: "Služby",
-        agency: "Agentura",
-        gallery: "Galerie",
+        servicesItems: {
+            brand: "Design Značky",
+            marketing: "Digitální Marketing",
+            web: "Webový Vývoj",
+            consulting: "Konzultace",
+            automation: "Automatizace"
+        },
+        courses: "Kurz",
+        coursesItems: {
+            course1: "Kurz 1",
+            course2: "Kurz 2", 
+            course3: "Kurz 3"
+        },
+        portfolio: "Výsledky práce",
         contact: "Kontakt"
     },
     hero: {
@@ -15,10 +27,15 @@ export const csTexts = {
         cta2: "Prozkoumat Služby"
     },
     about: {
-        title: "O mně",
+        title: "O nás",
         subtitle: "Digitální Strategistka & Kreativní Ředitelka",
         description1: "S více než desetiletou zkušeností v digitálním marketingu a rozvoji značek se specializuji na vytváření luxusních digitálních zážitků, které zaujmou a konvertují. Můj přístup kombinuje strategické myšlení s estetickou dokonalostí.",
         description2: "Věřím v sílu minimalismu, elegance a účelného designu pro vyprávění poutavých příběhů značek, které rezonují se sofistikovaným publikem.",
+        member2: {
+            name: "Jméno Příjmení",
+            subtitle: "Pozice",
+            description: "Popis druhého člena týmu bude doplněn později."
+        },
         stats: {
             projects: "Dokončených Projektů",
             experience: "Let Zkušeností",
@@ -39,6 +56,14 @@ export const csTexts = {
         web: {
             title: "Webový Vývoj",
             description: "Webové stránky na míru, které kombinují špičkovou technologii s nadčasovým designem"
+        },
+        consulting: {
+            title: "Konzultace",
+            description: "Odborné poradenství pro optimalizaci vašeho digitálního přístupu a strategie"
+        },
+        automation: {
+            title: "Automatizace",
+            description: "Inteligentní automatizace procesů pro zvýšení efektivity a úsporu času"
         }
     },
     agency: {
@@ -52,9 +77,25 @@ export const csTexts = {
             innovation: "Strategická Inovace"
         }
     },
-    gallery: {
-        title: "Portfolio Galerie",
-        subtitle: "Kurátorský výběr našich nejlepších prací"
+    portfolio: {
+        title: "Výsledky práce",
+        subtitle: "Ukázky našich nejlepších projektů"
+    },
+    courses: {
+        title: "Kurzy",
+        subtitle: "Profesionální vzdělávání pro váš úspěch",
+        course1: {
+            title: "Kurz 1",
+            description: "Popis kurzu bude doplněn později"
+        },
+        course2: {
+            title: "Kurz 2",
+            description: "Popis kurzu bude doplněn později"
+        },
+        course3: {
+            title: "Kurz 3",
+            description: "Popis kurzu bude doplněn později"
+        }
     },
     contact: {
         title: "Kontaktujte Nás",

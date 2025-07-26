@@ -28,16 +28,57 @@
                 <a href="#home" class="logo">DK</a>
                 <div class="nav-menu" id="navMenu">
                     <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
-                    <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
-                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
-                    <a href="#agency" class="nav-link" data-i18n="nav.agency">Agency</a>
-                    <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a>
-                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-                    <div class="language-switcher">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <button class="lang-btn" data-lang="cs">CS</button>
-                        <button class="lang-btn" data-lang="ru">RU</button>
-                        <button class="lang-btn" data-lang="uk">UK</button>
+                    <a href="#about" class="nav-link" data-i18n="nav.about">O nás</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle" data-i18n="nav.services">Služby</a>
+                        <div class="dropdown-menu">
+                            <a href="services/brand-design.html" class="dropdown-item" data-i18n="nav.servicesItems.brand">Design Značky</a>
+                            <a href="services/digital-marketing.html" class="dropdown-item" data-i18n="nav.servicesItems.marketing">Digitální Marketing</a>
+                            <a href="services/web-development.html" class="dropdown-item" data-i18n="nav.servicesItems.web">Webový Vývoj</a>
+                            <a href="services/consulting.html" class="dropdown-item" data-i18n="nav.servicesItems.consulting">Konzultace</a>
+                            <a href="services/automation.html" class="dropdown-item" data-i18n="nav.servicesItems.automation">Automatizace</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Courses Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="#courses" class="nav-link dropdown-toggle" data-i18n="nav.courses">Kurz</a>
+                        <div class="dropdown-menu">
+                            <a href="courses/course-1.html" class="dropdown-item" data-i18n="nav.coursesItems.course1">Kurz 1</a>
+                            <a href="courses/course-2.html" class="dropdown-item" data-i18n="nav.coursesItems.course2">Kurz 2</a>
+                            <a href="courses/course-3.html" class="dropdown-item" data-i18n="nav.coursesItems.course3">Kurz 3</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Výsledky práce</a>
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+                    
+                    <!-- Language Switcher Dropdown -->
+                    <div class="nav-dropdown language-dropdown">
+                        <button class="nav-link dropdown-toggle lang-toggle" data-i18n="nav.language">
+                            <span class="flag-icon">🇺🇸</span>
+                            <span class="lang-text">EN</span>
+                        </button>
+                        <div class="dropdown-menu lang-menu">
+                            <button class="dropdown-item lang-option" data-lang="en">
+                                <span class="flag-icon">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button class="dropdown-item lang-option" data-lang="cs">
+                                <span class="flag-icon">🇨🇿</span>
+                                <span>Čeština</span>
+                            </button>
+                            <button class="dropdown-item lang-option" data-lang="ru">
+                                <span class="flag-icon">🇷🇺</span>
+                                <span>Русский</span>
+                            </button>
+                            <button class="dropdown-item lang-option" data-lang="uk">
+                                <span class="flag-icon">🇺🇦</span>
+                                <span>Українська</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="hamburger" id="hamburger">
@@ -76,7 +117,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="about.title">About Me</h2>
+                <h2 class="section-title" data-i18n="about.title">O nás</h2>
                 <div class="title-line"></div>
             </div>
             <div class="about-content">
@@ -87,10 +128,23 @@
                     </div>
                 </div>
                 <div class="about-text" data-aos="fade-left">
-                    <h3>Daria Kovalchuk</h3>
-                    <p class="subtitle" data-i18n="about.subtitle">Digital Strategist & Creative Director</p>
-                    <p data-i18n="about.description1">With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.</p>
-                    <p data-i18n="about.description2">I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.</p>
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h3>Daria Kovalchuk</h3>
+                            <p class="subtitle" data-i18n="about.subtitle">Digital Strategist & Creative Director</p>
+                        </div>
+                        <p data-i18n="about.description1">With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.</p>
+                        <p data-i18n="about.description2">I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-info">
+                            <h3 data-i18n="about.member2.name">Jméno Příjmení</h3>
+                            <p class="subtitle" data-i18n="about.member2.subtitle">Pozice</p>
+                        </div>
+                        <p data-i18n="about.member2.description">Popis druhého člena týmu bude doplněn později.</p>
+                    </div>
+                    
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">50+</span>
@@ -119,127 +173,138 @@
                 <p class="section-subtitle" data-i18n="services.subtitle">Tailored solutions for premium brands</p>
             </div>
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <a href="services/brand-design.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3 data-i18n="services.brand.title">Brand Design</h3>
-                    <p data-i18n="services.brand.description">Creating distinctive visual identities that embody luxury and sophistication</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 data-i18n="services.brand.title">Design Značky</h3>
+                    <p data-i18n="services.brand.description">Vytváření výrazných vizuálních identit, které ztělesňují luxus a sofistikovanost</p>
+                </a>
+                <a href="services/digital-marketing.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <h3 data-i18n="services.marketing.title">Digital Marketing</h3>
-                    <p data-i18n="services.marketing.description">Strategic campaigns that elevate your brand presence and drive meaningful engagement</p>
-                </div>
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 data-i18n="services.marketing.title">Digitální Marketing</h3>
+                    <p data-i18n="services.marketing.description">Strategické kampaně, které pozvedají přítomnost vaší značky a podporují smysluplnou interakci</p>
+                </a>
+                <a href="services/web-development.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 data-i18n="services.web.title">Web Development</h3>
-                    <p data-i18n="services.web.description">Bespoke websites that combine cutting-edge technology with timeless design</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Agency Section -->
-    <section id="agency" class="agency">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="agency.title">Our Agency</h2>
-                <div class="title-line"></div>
-            </div>
-            <div class="agency-content">
-                <div class="agency-text" data-aos="fade-right">
-                    <h3 data-i18n="agency.subtitle">Where Vision Meets Excellence</h3>
-                    <p data-i18n="agency.description">Our boutique agency specializes in creating premium digital experiences for discerning clients. We combine strategic thinking with meticulous attention to detail to deliver results that exceed expectations.</p>
-                    <div class="agency-features">
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="agency.features.approach">Personalized Approach</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="agency.features.quality">Premium Quality</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="agency.features.design">Timeless Design</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="agency.features.innovation">Strategic Innovation</span>
-                        </div>
+                    <h3 data-i18n="services.web.title">Webový Vývoj</h3>
+                    <p data-i18n="services.web.description">Webové stránky na míru, které kombinují špičkovou technologii s nadčasovým designem</p>
+                </a>
+                <a href="services/consulting.html" class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
                     </div>
-                </div>
-                <div class="agency-image" data-aos="fade-left">
-                    <img src="images/agency-placeholder.jpg" alt="Our Agency">
-                </div>
+                    <h3 data-i18n="services.consulting.title">Konzultace</h3>
+                    <p data-i18n="services.consulting.description">Odborné poradenství pro optimalizaci vašeho digitálního přístupu a strategie</p>
+                </a>
+                <a href="services/automation.html" class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-i18n="services.automation.title">Automatizace</h3>
+                    <p data-i18n="services.automation.description">Inteligentní automatizace procesů pro zvýšení efektivity a úsporu času</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="gallery.title">Portfolio Gallery</h2>
+                <h2 class="section-title" data-i18n="courses.title">Kurzy</h2>
                 <div class="title-line"></div>
-                <p class="section-subtitle" data-i18n="gallery.subtitle">A curated selection of our finest work</p>
+                <p class="section-subtitle" data-i18n="courses.subtitle">Profesionální vzdělávání pro váš úspěch</p>
             </div>
-            <div class="gallery-grid">
-                <!-- Gallery items with placeholders -->
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-image">
+            <div class="courses-grid">
+                <a href="courses/course-1.html" class="course-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="course-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-i18n="courses.course1.title">Kurz 1</h3>
+                    <p data-i18n="courses.course1.description">Popis kurzu bude doplněn později</p>
+                </a>
+                <a href="courses/course-2.html" class="course-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="course-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-i18n="courses.course2.title">Kurz 2</h3>
+                    <p data-i18n="courses.course2.description">Popis kurzu bude doplněn později</p>
+                </a>
+                <a href="courses/course-3.html" class="course-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="course-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-i18n="courses.course3.title">Kurz 3</h3>
+                    <p data-i18n="courses.course3.description">Popis kurzu bude doplněn později</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title" data-i18n="portfolio.title">Výsledky práce</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle" data-i18n="portfolio.subtitle">Ukázky našich nejlepších projektů</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Portfolio items with placeholders -->
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-image">
                         <img src="images/gallery-1.jpg" alt="Project 1">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>Brand Design</p>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-image">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-image">
                         <img src="images/gallery-2.jpg" alt="Project 2">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>Web Development</p>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="gallery-image">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-image">
                         <img src="images/gallery-3.jpg" alt="Project 3">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>Digital Marketing</p>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="gallery-image">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="portfolio-image">
                         <img src="images/gallery-4.jpg" alt="Project 4">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>Brand Strategy</p>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="gallery-image">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="portfolio-image">
                         <img src="images/gallery-5.jpg" alt="Project 5">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>Creative Direction</p>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="gallery-image">
+                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="portfolio-image">
                         <img src="images/gallery-6.jpg" alt="Project 6">
-                        <div class="gallery-overlay">
+                        <div class="portfolio-overlay">
                             <h4>Project Title</h4>
                             <p>UI/UX Design</p>
                         </div>

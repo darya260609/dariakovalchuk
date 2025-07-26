@@ -37,6 +37,70 @@ navLinks.forEach(link => {
     });
 });
 
+// Dropdown menu functionality
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+// Close all dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
+});
+
+// Toggle dropdown on click (for mobile)
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = toggle.closest('.nav-dropdown');
+        
+        // Close other dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove('active');
+            }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+    });
+});
+
+// Handle dropdown item clicks
+dropdownItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const href = item.getAttribute('href');
+        
+        // Close mobile menu
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        
+        // Close all dropdowns
+        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+        
+        // Check if it's an external page link or internal anchor
+        if (href.startsWith('http') || href.includes('.html')) {
+            // External page or HTML file - navigate normally
+            window.location.href = href;
+        } else if (href.startsWith('#')) {
+            // Internal anchor - smooth scroll
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - navbar.offsetHeight;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -102,8 +166,8 @@ if (hero) {
     });
 }
 
-// Gallery lightbox functionality
-const galleryItems = document.querySelectorAll('.gallery-item');
+// Portfolio lightbox functionality
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 const body = document.body;
 
 // Create lightbox elements
@@ -127,7 +191,7 @@ const lightboxSubtitle = lightbox.querySelector('.lightbox-caption p');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
 
 // Open lightbox
-galleryItems.forEach(item => {
+portfolioItems.forEach(item => {
     item.addEventListener('click', () => {
         const img = item.querySelector('img');
         const title = item.querySelector('h4').textContent;
@@ -207,13 +271,49 @@ window.addEventListener('load', () => {
 
 // Language switching functionality
 function setLanguage(lang) {
-    // Update active button
+    // Update active button (legacy)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
         if (btn.getAttribute('data-lang') === lang) {
             btn.classList.add('active');
         }
     });
+
+    // Update active language option (new dropdown)
+    document.querySelectorAll('.lang-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('data-lang') === lang) {
+            option.classList.add('active');
+        }
+    });
+
+    // Update language toggle display
+    const langToggle = document.querySelector('.lang-toggle');
+    if (langToggle) {
+        const flagIcon = langToggle.querySelector('.flag-icon');
+        const langText = langToggle.querySelector('.lang-text');
+        
+        const flags = {
+            'en': '🇺🇸',
+            'cs': '🇨🇿',
+            'ru': '🇷🇺',
+            'uk': '🇺🇦'
+        };
+        
+        const texts = {
+            'en': 'EN',
+            'cs': 'CS',
+            'ru': 'RU',
+            'uk': 'UK'
+        };
+        
+        if (flagIcon) flagIcon.textContent = flags[lang] || '🇺🇸';
+        if (langText) langText.textContent = texts[lang] || 'EN';
+        
+        // Update active state of toggle button
+        langToggle.classList.remove('active');
+        langToggle.classList.add('active');
+    }
 
     // Update all translatable elements
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -245,14 +345,35 @@ function setLanguage(lang) {
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Initialize language
+// Initialize language immediately
 const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+
+// Set language immediately and also on DOM ready
 setLanguage(savedLang);
 
-// Add click handlers for language buttons
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure language is set after DOM is ready
+    setLanguage(savedLang);
+});
+
+// Add click handlers for language buttons (legacy)
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
         setLanguage(lang);
+    });
+});
+
+// Add click handlers for language options (new dropdown)
+document.querySelectorAll('.lang-option').forEach(option => {
+    option.addEventListener('click', () => {
+        const lang = option.getAttribute('data-lang');
+        setLanguage(lang);
+        
+        // Close language dropdown
+        const dropdown = option.closest('.language-dropdown');
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
     });
 }); 

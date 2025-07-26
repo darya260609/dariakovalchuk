@@ -1,10 +1,22 @@
 export const enTexts = {
     nav: {
         home: "Home",
-        about: "About",
+        about: "About Us",
         services: "Services",
-        agency: "Agency",
-        gallery: "Gallery",
+        servicesItems: {
+            brand: "Brand Design",
+            marketing: "Digital Marketing",
+            web: "Web Development",
+            consulting: "Consulting",
+            automation: "Automation"
+        },
+        courses: "Courses",
+        coursesItems: {
+            course1: "Course 1",
+            course2: "Course 2",
+            course3: "Course 3"
+        },
+        portfolio: "Portfolio",
         contact: "Contact"
     },
     hero: {
@@ -15,10 +27,15 @@ export const enTexts = {
         cta2: "Explore Services"
     },
     about: {
-        title: "About Me",
+        title: "About Us",
         subtitle: "Digital Strategist & Creative Director",
         description1: "With over a decade of experience in digital marketing and brand development, I specialize in creating luxurious digital experiences that captivate and convert. My approach combines strategic thinking with aesthetic excellence.",
         description2: "I believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
+        member2: {
+            name: "Name Surname",
+            subtitle: "Position",
+            description: "Description of the second team member will be added later."
+        },
         stats: {
             projects: "Projects Completed",
             experience: "Years Experience",
@@ -39,6 +56,14 @@ export const enTexts = {
         web: {
             title: "Web Development",
             description: "Bespoke websites that combine cutting-edge technology with timeless design"
+        },
+        consulting: {
+            title: "Consulting",
+            description: "Expert advice for optimizing your digital approach and strategy"
+        },
+        automation: {
+            title: "Automation",
+            description: "Intelligent process automation for increased efficiency and time savings"
         }
     },
     agency: {
@@ -52,9 +77,25 @@ export const enTexts = {
             innovation: "Strategic Innovation"
         }
     },
-    gallery: {
-        title: "Portfolio Gallery",
-        subtitle: "A curated selection of our finest work"
+    portfolio: {
+        title: "Portfolio",
+        subtitle: "Showcase of our best projects"
+    },
+    courses: {
+        title: "Courses",
+        subtitle: "Professional education for your success",
+        course1: {
+            title: "Course 1",
+            description: "Course description will be added later"
+        },
+        course2: {
+            title: "Course 2",
+            description: "Course description will be added later"
+        },
+        course3: {
+            title: "Course 3",
+            description: "Course description will be added later"
+        }
     },
     contact: {
         title: "Get In Touch",
