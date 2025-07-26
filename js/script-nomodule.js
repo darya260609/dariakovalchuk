@@ -14,9 +14,7 @@ const translations = {
             },
             courses: "Courses",
             coursesItems: {
-                course1: "Course 1",
-                course2: "Course 2",
-                course3: "Course 3"
+                course1: "Course 1"
             },
             portfolio: "Portfolio",
             contact: "Contact",
@@ -69,15 +67,8 @@ const translations = {
             subtitle: "Professional education for your success",
             course1: {
                 title: "Course 1",
-                description: "Course description will be added later"
-            },
-            course2: {
-                title: "Course 2",
-                description: "Course description will be added later"
-            },
-            course3: {
-                title: "Course 3",
-                description: "Course description will be added later"
+                subtitle: "Learn the basics of digital marketing",
+                description: "Complete course for beginners who want to enter the world of digital marketing. You will learn the basics, strategies and practical skills needed for success in the digital world."
             }
         },
         portfolio: {
@@ -114,9 +105,7 @@ const translations = {
             },
             courses: "Kurzy",
             coursesItems: {
-                course1: "Kurz 1",
-                course2: "Kurz 2",
-                course3: "Kurz 3"
+                course1: "Kurz 1"
             },
             portfolio: "Výsledky práce",
             contact: "Kontakt",
@@ -174,15 +163,8 @@ const translations = {
             subtitle: "Profesionální vzdělávání pro váš úspěch",
             course1: {
                 title: "Kurz 1",
-                description: "Popis kurzu bude doplněn později"
-            },
-            course2: {
-                title: "Kurz 2",
-                description: "Popis kurzu bude doplněn později"
-            },
-            course3: {
-                title: "Kurz 3",
-                description: "Popis kurzu bude doplněn později"
+                subtitle: "Naučte se základy digitálního marketingu",
+                description: "Kompletní kurz pro začátečníky, kteří chtějí proniknout do světa digitálního marketingu. Naučíte se základy, strategie a praktické dovednosti potřebné pro úspěch v digitálním světě."
             }
         },
         portfolio: {
@@ -219,9 +201,7 @@ const translations = {
             },
             courses: "Курсы",
             coursesItems: {
-                course1: "Курс 1",
-                course2: "Курс 2",
-                course3: "Курс 3"
+                course1: "Курс 1"
             },
             portfolio: "Портфолио",
             contact: "Контакты",
@@ -274,15 +254,8 @@ const translations = {
             subtitle: "Профессиональное образование для вашего успеха",
             course1: {
                 title: "Курс 1",
-                description: "Описание курса будет добавлено позже"
-            },
-            course2: {
-                title: "Курс 2",
-                description: "Описание курса будет добавлено позже"
-            },
-            course3: {
-                title: "Курс 3",
-                description: "Описание курса будет добавлено позже"
+                subtitle: "Изучите основы цифрового маркетинга",
+                description: "Полный курс для начинающих, которые хотят войти в мир цифрового маркетинга. Вы изучите основы, стратегии и практические навыки, необходимые для успеха в цифровом мире."
             }
         },
         portfolio: {
@@ -319,9 +292,7 @@ const translations = {
             },
             courses: "Курси",
             coursesItems: {
-                course1: "Курс 1",
-                course2: "Курс 2",
-                course3: "Курс 3"
+                course1: "Курс 1"
             },
             portfolio: "Портфоліо",
             contact: "Контакти",
@@ -374,15 +345,8 @@ const translations = {
             subtitle: "Професійна освіта для вашого успіху",
             course1: {
                 title: "Курс 1",
-                description: "Опис курсу буде додано пізніше"
-            },
-            course2: {
-                title: "Курс 2",
-                description: "Опис курсу буде додано пізніше"
-            },
-            course3: {
-                title: "Курс 3",
-                description: "Опис курсу буде додано пізніше"
+                subtitle: "Вивчіть основи цифрового маркетингу",
+                description: "Повний курс для початківців, які хочуть увійти в світ цифрового маркетингу. Ви вивчите основи, стратегії та практичні навички, необхідні для успіху в цифровому світі."
             }
         },
         portfolio: {
@@ -407,11 +371,13 @@ const translations = {
     }
 };
 
-// Initialize AOS (Animate On Scroll)
+// Initialize AOS (Animate On Scroll) with mobile optimization
 AOS.init({
     duration: 1000,
     once: true,
-    offset: 100
+    offset: 100,
+    // Disable animations on mobile for better performance
+    disable: 'mobile'
 });
 
 // Navbar scroll effect
@@ -441,30 +407,39 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        
+        // Add touch feedback for mobile
+        if ('ontouchstart' in window) {
+            link.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                link.style.transform = '';
+            }, 150);
+        }
     });
 });
 
-// Dropdown menu functionality
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-const dropdownItems = document.querySelectorAll('.dropdown-item');
+// Language dropdown functionality (only for language switcher)
+const langToggles = document.querySelectorAll('.lang-toggle');
+const langOptions = document.querySelectorAll('.lang-option');
 
-// Close all dropdowns when clicking outside
+// Close language dropdown when clicking outside
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    if (!e.target.closest('.language-dropdown')) {
+        document.querySelectorAll('.language-dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
         });
     }
 });
 
-// Toggle dropdown on click (for mobile)
-dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
+// Toggle language dropdown on click and touch
+langToggles.forEach(toggle => {
+    const handleToggle = (e) => {
         e.preventDefault();
-        const dropdown = toggle.closest('.nav-dropdown');
+        e.stopPropagation(); // Prevent event bubbling
+        const dropdown = toggle.closest('.language-dropdown');
         
         // Close other dropdowns
-        document.querySelectorAll('.nav-dropdown').forEach(otherDropdown => {
+        document.querySelectorAll('.language-dropdown').forEach(otherDropdown => {
             if (otherDropdown !== dropdown) {
                 otherDropdown.classList.remove('active');
             }
@@ -472,33 +447,49 @@ dropdownToggles.forEach(toggle => {
         
         // Toggle current dropdown
         dropdown.classList.toggle('active');
-    });
+    };
+    
+    toggle.addEventListener('click', handleToggle);
+    toggle.addEventListener('touchstart', handleToggle, { passive: false });
 });
 
-// Handle dropdown item clicks
-dropdownItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-        const href = item.getAttribute('href');
+// Handle language option clicks and touch
+langOptions.forEach(option => {
+    const handleOption = (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
+        const lang = option.getAttribute('data-lang');
+        if (lang) {
+            setLanguage(lang);
+        }
         
-        // Close mobile menu
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        
-        // Close all dropdowns
-        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        // Close all language dropdowns
+        document.querySelectorAll('.language-dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
         });
-        
-        // Check if it's an external page link or internal anchor
-        if (href && (href.startsWith('http') || href.includes('.html'))) {
-            // External page or HTML file - navigate normally
-            window.location.href = href;
-        } else if (href && href.startsWith('#')) {
-            // Internal anchor - smooth scroll
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const offsetTop = target.offsetTop - navbar.offsetHeight;
+    };
+    
+    option.addEventListener('click', handleOption);
+    option.addEventListener('touchstart', handleOption, { passive: false });
+});
+
+// Smooth scrolling for anchor links with mobile optimization
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offsetTop = target.offsetTop - navbar.offsetHeight;
+            
+            // Use different scroll behavior for mobile
+            if ('ontouchstart' in window) {
+                // For mobile devices, use instant scroll for better performance
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'auto'
+                });
+            } else {
+                // For desktop, use smooth scroll
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -508,24 +499,12 @@ dropdownItems.forEach(item => {
     });
 });
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - navbar.offsetHeight;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Active navigation link highlighting
+// Active navigation link highlighting with mobile optimization
 const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
+
+// Throttle scroll events for better mobile performance
+let ticking = false;
+function updateActiveNav() {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - navbar.offsetHeight - 100;
@@ -541,6 +520,28 @@ window.addEventListener('scroll', () => {
             link.classList.add('active');
         }
     });
+    
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(updateActiveNav);
+        ticking = true;
+    }
+});
+
+// Add touch feedback for service and course cards
+document.querySelectorAll('.service-card, .course-card').forEach(card => {
+    if ('ontouchstart' in window) {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+        
+        card.addEventListener('touchend', function() {
+            this.style.transform = '';
+        });
+    }
 });
 
 // Lightbox functionality for portfolio
