@@ -1457,21 +1457,21 @@ img {
         opacity: 1;
         visibility: visible;
         transform: none;
-        background: rgba(0, 0, 0, 0.05);
+        background: transparent;
         border: none;
         box-shadow: none;
         margin-top: 0;
         padding: 8px;
         border-radius: 12px;
         display: flex;
-        flex-direction: column; /* Změněno na column pro vertikální layout */
-        gap: 6px;
+        flex-direction: column;
+        gap: 8px;
         min-width: auto;
         right: auto;
         left: auto;
         z-index: 1002;
         width: 100%;
-        max-width: 200px; /* Zmenšená šířka pro vertikální layout */
+        max-width: 200px;
         justify-content: center;
         align-items: center;
     }
@@ -1479,45 +1479,58 @@ img {
 
     
     .lang-option {
-        padding: 0.7rem 1rem;
+        padding: 12px 16px;
         border-bottom: none;
         text-align: center;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 8px;
         flex-shrink: 0;
-        width: 100%; /* Plná šířka pro vertikální layout */
-        font-size: 0.85rem;
-        background: rgba(255, 255, 255, 0.7);
-        transition: all 0.25s ease;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(5px);
+        width: 100%;
+        font-size: 14px;
+        background: #ffffff;
+        transition: all 0.3s ease;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        font-weight: 500;
+        color: #333333;
+        cursor: pointer;
+        display: flex;
     }
     
     .lang-option .flag-icon {
-        font-size: 1.1rem;
-        margin-right: 8px; /* Mezera mezi vlajkou a textem */
+        font-size: 16px;
+        margin-right: 8px;
         margin-bottom: 0;
     }
     
     .lang-option span:not(.flag-icon) {
-        font-size: 0.85rem;
+        font-size: 14px;
         font-weight: 500;
     }
     
     .lang-option:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: #f8f9fa;
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        border-color: #d0d0d0;
     }
     
     .lang-option.active {
         background: var(--primary-color);
-        color: var(--text-white);
-        box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
-        transform: translateY(-2px);
+        color: white;
+        box-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+        transform: none;
         border-color: var(--primary-color);
+    }
+    
+    /* Zajistíme jednotné zaoblení rohů pro všechna tlačítka */
+    .lang-option:first-child {
+        border-radius: 8px;
+    }
+    
+    .lang-option:last-child {
+        border-radius: 8px;
     }
     
     .lang-option.active:hover {

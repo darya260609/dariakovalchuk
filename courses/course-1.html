@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Značky - Daria Kovalchuk</title>
-    <meta name="description" content="Profesionální design značek a vizuálních identit">
+    <title>Target Vision Kurz - Taргетированная реклама Meta Ads</title>
+    <meta name="description" content="Naučte se taргetированную рекламу v Meta Ads za 1 měsíc. Úroveň 1 kurzu Target Vision.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,22 +19,206 @@
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        .course-hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .course-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+            padding: 0 0 60px;
+            min-height: auto;
+        }
+        
+        .course-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .course-goal {
+            background: linear-gradient(135deg, var(--primary-color), #d4af37);
+            color: white;
+            border-left: none;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 30px;
+            right: -45px;
+            background: #ff4757;
+            color: white;
+            padding: 10px 50px;
+            transform: rotate(45deg);
+            transform-origin: center center;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
+            z-index: 10;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .buy-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .buy-button:hover {
+            background: #b8964d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(201, 169, 97, 0.4);
+        }
+        
+        .module-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .module-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .module-list li::before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+            top: 15px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .instructor-section {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            color: white;
+            border-left: none;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .breadcrumb {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .course-section {
+                padding: 25px;
+                margin-bottom: 20px;
+            }
+            
+            .pricing-card {
+                padding: 20px;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="../index.html" class="logo">DK</a>
+                <a href="../index.html" class="logo">Target Vision</a>
                 <div class="nav-menu" id="navMenu">
-                    <a href="../index.html" class="nav-link">Domů</a>
-                    <a href="../index.html#about" class="nav-link">O nás</a>
-                    
-                    <a href="../index.html#services" class="nav-link">Služby</a>
-                    <a href="../index.html#courses" class="nav-link">Kurzy</a>
-                    
-                    <a href="../index.html#portfolio" class="nav-link">Výsledky práce</a>
-                    <a href="../index.html#contact" class="nav-link">Kontakt</a>
+                    <a href="../index.html" class="nav-link" data-i18n="nav.home">Domů</a>
+                    <a href="../index.html#about" class="nav-link" data-i18n="nav.about">O nás</a>
+                    <a href="../index.html#services" class="nav-link" data-i18n="nav.services">Služby</a>
+                    <a href="../index.html#courses" class="nav-link" data-i18n="nav.courses">Kurzy</a>
+                    <a href="../index.html#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a>
+                    <a href="../index.html#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
                     
                     <!-- Language Switcher Dropdown -->
                     <div class="nav-dropdown language-dropdown">
@@ -77,67 +261,225 @@
             <nav class="breadcrumb-nav">
                 <a href="../index.html" class="breadcrumb-item">
                     <i class="fas fa-home"></i>
-                    <span>Domů</span>
+                    <span data-i18n="breadcrumb.home">Domů</span>
                 </a>
                 <i class="fas fa-chevron-right breadcrumb-separator"></i>
-                <a href="../index.html#services" class="breadcrumb-item">
-                    <span>Služby</span>
+                <a href="../index.html#courses" class="breadcrumb-item">
+                    <span data-i18n="breadcrumb.courses">Kurzy</span>
                 </a>
                 <i class="fas fa-chevron-right breadcrumb-separator"></i>
-                <span class="breadcrumb-item active">Automatizace</span>
+                <span class="breadcrumb-item active" data-i18n="breadcrumb.target">Targeting - Level 1</span>
             </nav>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-overlay"></div>
-        </div>
+    <!-- Course Hero -->
+    <section class="course-hero">
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="hero-title">
-                    <span class="line-1" data-i18n="services.automation.title">Automatizace</span>
-                    <span class="line-2" data-i18n="services.automation.subtitle">Inteligentní řešení pro váš úspěch</span>
+            <div data-aos="fade-up">
+                <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 1rem; color: var(--text-dark);" data-i18n="course.title">
+                    Targeting - Level 1
                 </h1>
-                <p class="hero-subtitle" data-i18n="services.automation.description">Automatizujeme vaše procesy pro zvýšení efektivity a úsporu času</p>
-                <div class="hero-cta">
-                    <a href="../index.html#contact" class="btn btn-primary">Kontaktovat</a>
-                    <a href="../index.html#services" class="btn btn-outline">
-                        <i class="fas fa-arrow-left"></i>
-                        Zpět na služby
-                    </a>
-                </div>
+                <p style="font-size: 1.4rem; color: var(--primary-color); margin-bottom: 2rem; font-weight: 600;" data-i18n="course.subtitle">
+                    Spusťte reklamu v Meta Ads (Facebook a Instagram) z nuly už za měsíc
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Service Content -->
-    <section class="service-detail">
+    <!-- Course Content -->
+    <section class="course-content">
         <div class="container">
-            <div class="service-content">
-                <div class="service-text" data-aos="fade-right">
-                    <h2 data-i18n="services.automation.title">Automatizace</h2>
-                    <p data-i18n="services.automation.description">Inteligentní automatizace procesů pro zvýšení efektivity a úsporu času. Naše řešení kombinují nejmodernější technologie s praktickým přístupem k optimalizaci vašich obchodních procesů.</p>
+            
+            <!-- Course Goal -->
+            <div class="course-section" data-aos="fade-up">
+                <h2 style="margin-bottom: 2rem;"><i class="fas fa-bullseye" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.goal.title">Cíl kurzu</span></h2>
+                <div style="font-size: 1.1rem; line-height: 1.8;">
+                    <p data-i18n="course.goal.description1">• Zapustit svou první úspěšnou reklamu, i když jste nikdy předtím nepracovali s targetem.</p>
+                    <p data-i18n="course.goal.description2">• Přestat pociťovat úzkost při otevírání reklamního kabinetu Meta (Facebook a Instagram).</p>
+                    <p data-i18n="course.goal.description3">Na kurzu získáte postupný návod, který učiní proces spuštění reklamy srozumitelným a dostupným. Odstraníme strach před složitými nastaveními a s jistotou začnete přitahovat klienty nebo škálovat svůj byznys.</p>
+                    <p style="font-weight: 600; margin-top: 1.5rem;" data-i18n="course.goal.conclusion">Tento kurz je váš první krok k jistotě a výsledkům v targetované reklamě!</p>
+                </div>
+            </div>
+
+            <!-- Course Format -->
+            <div class="course-section" data-aos="fade-up">
+                <h2 style="margin-bottom: 2rem;"><i class="fas fa-laptop" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.format.title">Formát kurzu</span></h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;" data-i18n="course.format.duration">Online výuka v délce <strong>1 měsíc</strong> s plným doprovodem a podporou ode mě a týmu kurátorů.</p>
+                
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="course.format.includes">Co obsahuje:</h3>
+                <ul class="feature-list">
+                    <li data-i18n="course.format.feature1"><strong>3 video hovory v Zoom</strong>, kde probereme složité momenty, odpovíme na otázky a dáme vám dodatečnou podporu.</li>
+                    <li data-i18n="course.format.feature2"><strong>Chat podpory</strong>, kde budete moci operativně získávat odpovědi na otázky a sdílet úspěchy.</li>
+                    <li data-i18n="course.format.feature3"><strong>Lekce na vzdělávací platformě</strong> se zpětnou vazbou k vašim domácím úkolům.</li>
+                    <li data-i18n="course.format.feature4"><strong>Pomoc se spuštěním reklamy</strong>: společně projdeme vaše první kroky, abyste s jistotou spustili svou kampaň.</li>
+                </ul>
+                
+                <p style="font-weight: 600; color: var(--primary-color); margin-top: 1.5rem;" data-i18n="course.format.support">Kurz je postaven tak, abyste cítili podporu v každé fázi a garantovaně dosáhli výsledku!</p>
+            </div>
+
+
+            <!-- Course Program -->
+            <div class="course-section" data-aos="fade-up">
+                <h2 style="margin-bottom: 2rem;"><i class="fas fa-list-ul" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.program.title">Program kurzu "Target Vision Úroveň 1"</span></h2>
+                
+                <ul class="module-list">
+                    <li>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;" data-i18n="course.program.module1.title">Modul 1: Technické nastavení kabinetu</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li data-i18n="course.program.module1.item1">Co je targetovaná reklama, proč je potřeba a jaký výsledek můžete získat.</li>
+                            <li data-i18n="course.program.module1.item2">Základy reklamního kabinetu Meta Ads: co je důležité vědět pro dosažení výsledku.</li>
+                            <li data-i18n="course.program.module1.item3">Nastavení business účtu na Instagramu a technická kontrola profilu pro práci s reklamou.</li>
+                            <li data-i18n="course.program.module1.item4">Postupné nastavení reklamního kabinetu pro spuštění první kampaně.</li>
+                        </ul>
+                    </li>
                     
-                    <h3>Co zahrnuje naše služba:</h3>
-                    <ul>
-                        <li>Automatizace marketingových kampaní</li>
-                        <li>Chatboty a AI asistenti</li>
-                        <li>Automatizace workflow procesů</li>
-                        <li>Integrace systémů</li>
-                        <li>Monitoring a reporting</li>
-                    </ul>
+                    <li>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;" data-i18n="course.program.module2.title">Modul 2: Příprava na spuštění reklamy</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li data-i18n="course.program.module2.item1">Pravidla úspěšného spuštění reklamy: co je nutné vědět před startem.</li>
+                            <li data-i18n="course.program.module2.item2">Vytvoření smyslové báze: jak správně formulovat vaši nabídku.</li>
+                            <li data-i18n="course.program.module2.item3">Určení cílové skupiny: kdo jsou vaši klienti a jak je najít.</li>
+                        </ul>
+                    </li>
                     
-                    <div class="service-cta">
-                        <a href="../index.html#contact" class="btn btn-primary">Začít projekt</a>
+                    <li>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;" data-i18n="course.program.module3.title">Modul 3: Vytvoření reklamního kreativu</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li data-i18n="course.program.module3.item1">Jak vytvořit kreativy pro reklamní kampaň.</li>
+                            <li data-i18n="course.program.module3.item2">Práce se šablonami v Canva: praktické rady a efektivní postupy.</li>
+                            <li data-i18n="course.program.module3.item3">Principy vizuálního a textového oformování pro přitažení pozornosti.</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;" data-i18n="course.program.module4.title">Modul 4: Nastavení první reklamní kampaně</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li data-i18n="course.program.module4.item1">Postupný návod na spuštění první reklamy v reklamním kabinetu.</li>
+                            <li data-i18n="course.program.module4.item2">Výběr cílů, nastavení rozpočtu a publika.</li>
+                            <li data-i18n="course.program.module4.item3">Kontrola reklamní kampaně před spuštěním: důležité detaily.</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;" data-i18n="course.program.module5.title">Modul 5: Analýza výsledků a optimalizace</h3>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li data-i18n="course.program.module5.item1">Jak správně ohodnotit efektivnost reklamní kampaně.</li>
+                            <li data-i18n="course.program.module5.item2">Základní metriky a ukazatele: co je důležité vědět a na co se zaměřit.</li>
+                            <li data-i18n="course.program.module5.item3">Dodatečné materiály pro analýzu reklamních kampaní.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pricing -->
+            <div class="course-section" data-aos="fade-up">
+                <h2 style="margin-bottom: 3rem; text-align: center;"><i class="fas fa-tags" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.pricing.title">Tarify</span></h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    
+                    <!-- Economy Tariff -->
+                    <div class="pricing-card">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;" data-i18n="course.pricing.economy.title">Ekonomický tarif</h3>
+                        <div class="price" style="text-align: center;">99 €</div>
+                        
+                        <ul class="feature-list">
+                            <li data-i18n="course.pricing.economy.feature1">Přístup k <strong>5 modulům na platformě</strong> pro samostudium.</li>
+                            <li data-i18n="course.pricing.economy.feature2">Dodatečné materiály pro každý modul.</li>
+                            <li data-i18n="course.pricing.economy.feature3"><strong>Obecný chat účastníků</strong> pro komunikaci a výměnu zkušeností (bez zpětné vazby).</li>
+                        </ul>
+                        
+                        <p style="font-style: italic; margin: 20px 0; color: var(--text-light);" data-i18n="course.pricing.economy.description">
+                            Ideálně vhodné pro ty, kdo chtějí studovat materiál vlastním tempem a samostatně si osvojit základní dovednosti targetu.
+                        </p>
+                        
+                        <a href="https://buy.stripe.com/bIY8wDfGgaPegEgeUV" class="buy-button" data-i18n="course.pricing.buy">
+                            ZAKOUPIT KURZ
+                        </a>
+                    </div>
+                    
+                    <!-- Comfort Tariff - Featured -->
+                    <div class="pricing-card featured" data-label="" data-i18n-label="course.pricing.popular">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;" data-i18n="course.pricing.comfort.title">Komfortní tarif</h3>
+                        <div class="price" style="text-align: center;">150 €</div>
+                        
+                        <ul class="feature-list">
+                            <li data-i18n="course.pricing.comfort.feature1">Přístup k <strong>5 modulům na platformě</strong> s <strong>kontrolou domácích úkolů</strong>.</li>
+                            <li data-i18n="course.pricing.comfort.feature2">Rozšířené dodatečné materiály pro každý modul.</li>
+                            <li data-i18n="course.pricing.comfort.feature3"><strong>Chat účastníků se zpětnou vazbou od kurátora</strong>: odpovědi na vaše otázky a podpora ve všech fázích.</li>
+                            <li data-i18n="course.pricing.comfort.feature4"><strong>Bonusové lekce-překvapení</strong> na platformě: unikátní fišky a strategie.</li>
+                            <li data-i18n="course.pricing.comfort.feature5"><strong>3 skupinové video hovory v Zoom</strong> pro rozbor složitých otázek.</li>
+                            <li data-i18n="course.pricing.comfort.feature6"><strong>100% garance spuštění vaší první reklamní kampaně</strong>.</li>
+                        </ul>
+                        
+                        <p style="font-style: italic; margin: 20px 0; color: var(--text-light);" data-i18n="course.pricing.comfort.description">
+                            Pro ty, kdo chtějí nejen osvojit si základy, ale také získat podporu v procesu učení a spuštění reklamy.
+                        </p>
+                        
+                        <a href="https://buy.stripe.com/eVaeV1gKkaPe9bO4gi" class="buy-button" data-i18n="course.pricing.buy">
+                            ZAKOUPIT KURZ
+                        </a>
+                    </div>
+                    
+                    <!-- Business Tariff -->
+                    <div class="pricing-card">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-align: center;" data-i18n="course.pricing.business.title">Business tarif</h3>
+                        <div class="price" style="text-align: center;">350 €</div>
+                        
+                        <ul class="feature-list">
+                            <li data-i18n="course.pricing.business.feature1">Přístup k <strong>5 modulům na platformě</strong> s <strong>kontrolou domácích úkolů</strong>.</li>
+                            <li data-i18n="course.pricing.business.feature2">Rozšířené dodatečné materiály pro každý modul.</li>
+                            <li data-i18n="course.pricing.business.feature3"><strong>Chat účastníků se zpětnou vazbou od kurátora</strong>.</li>
+                            <li data-i18n="course.pricing.business.feature4"><strong>Bonusové lekce-překvapení</strong> na platformě.</li>
+                            <li data-i18n="course.pricing.business.feature5"><strong>3 skupinové video hovory v Zoom</strong>.</li>
+                            <li data-i18n="course.pricing.business.feature6"><strong>1 osobní video hovor se mnou</strong>.</li>
+                            <li data-i18n="course.pricing.business.feature7"><strong>Osobní chat podpory se mnou</strong>.</li>
+                            <li data-i18n="course.pricing.business.feature8"><strong>100% garance spuštění vaší první reklamní kampaně</strong>.</li>
+                        </ul>
+                        
+                        <p style="font-style: italic; margin: 20px 0; color: var(--text-light);" data-i18n="course.pricing.business.description">
+                            Pro vážné podnikatele, kteří chtějí maximální podporu a osobní přístup.
+                        </p>
+                        
+                        <a href="https://buy.stripe.com/14k28feCce1q0Fi5kn" class="buy-button" data-i18n="course.pricing.buy">
+                            ZAKOUPIT KURZ
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="course-section" data-aos="fade-up">
+                <h2 style="margin-bottom: 2rem;"><i class="fas fa-users" style="margin-right: 10px; color: var(--primary-color);"></i><span data-i18n="course.audience.title">Pro koho je tento kurz</span></h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <h3 style="color: #28a745; margin-bottom: 1rem;" data-i18n="course.audience.for.title">✅ Kurz JE pro vás, pokud:</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="course.audience.for.item1">Jste <strong>začátečník</strong>, který nikdy nepracoval s targetem a chce osvojit si základy nastavení reklamy.</li>
+                            <li data-i18n="course.audience.for.item2">Jste <strong>podnikatel</strong>, který se chce naučit samostatně spouštět reklamy a přitahovat klienty pro svůj byznys.</li>
+                            <li data-i18n="course.audience.for.item3">Uvažujete o <strong>targetu jako profesi</strong> a chcete udělat první krok v osvojení požadované dovednosti.</li>
+                            <li data-i18n="course.audience.for.item4">Chcete <strong>přestat se bát</strong> reklamního kabinetu Meta Ads a naučit se s ním pracovat jistě.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: #dc3545; margin-bottom: 1rem;" data-i18n="course.audience.not.title">❌ Kurz NENÍ pro vás, pokud:</h3>
+                        <ul class="feature-list">
+                            <li data-i18n="course.audience.not.item1">Již máte zkušenosti s Meta Ads a jistě nastavujete reklamní kampaně.</li>
+                            <li data-i18n="course.audience.not.item2">Hledáte pokročilé strategie, analytiku a škálování.</li>
+                            <li data-i18n="course.audience.not.item3">Nejste připraveni plnit praktické úkoly.</li>
+                            <li data-i18n="course.audience.not.item4">Nejste připraveni věnovat čas učení (alespoň 2-3 hodiny týdně).</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="service-image" data-aos="fade-left">
-                    <img src="../images/gallery-1.jpg" alt="Design Značky">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                    <p style="font-weight: 600; margin-bottom: 10px;" data-i18n="course.audience.important">Důležité:</p>
+                    <p data-i18n="course.audience.level">Toto je <strong>první úroveň kurzu</strong> ze tří, který dává základní znalosti a dovednosti. Po jeho absolvování budete moci spustit svou první reklamu, a pro ty, kdo budou chtít prohloubit znalosti, jsou k dispozici druhá a třetí úroveň výuky.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -145,7 +487,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Daria Kovalchuk. Všechna práva vyhrazena.</p>
+                <p>&copy; 2024 Target Vision. Všechna práva vyhrazena.</p>
                 <p class="footer-tagline">Vytvořeno s excelencí</p>
             </div>
         </div>
@@ -154,5 +496,20 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../js/script-nomodule.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

@@ -14,11 +14,16 @@ const translations = {
             },
             courses: "Courses",
             coursesItems: {
-                course1: "Course 1"
+                course1: "Target Vision"
             },
             portfolio: "Portfolio",
             contact: "Contact",
             language: "Language"
+        },
+        breadcrumb: {
+            home: "Home",
+            courses: "Courses",
+            target: "Targeting - Level 1"
         },
         hero: {
             line1: "Target Vision",
@@ -28,10 +33,15 @@ const translations = {
             cta2: "Explore Services"
         },
         about: {
-            title: "About Us",
-            subtitle: "Company Director",
-            description1: "Target Vision is a leading digital agency specializing in creating luxurious digital experiences that captivate and convert. Our approaches combine strategic thinking with aesthetic excellence.",
-            description2: "We believe in the power of minimalism, elegance, and purposeful design to tell compelling brand stories that resonate with sophisticated audiences.",
+            title: "About Me",
+            subtitle: "Company Director & Creative Expert",
+            description1: "I'm Daria Kovalchuk - a recognized expert in targeted advertising with over 6 years of experience. I specialize in Meta Ads and help entrepreneurs transform their business through high-performance advertising campaigns.",
+            description2: "Throughout my career, I've launched hundreds of successful campaigns, trained dozens of new targetologists, and achieved exceptional results for clients across various industries. My methodologies guarantee measurable growth and ROI.",
+            stats: {
+                clients: "Happy Clients",
+                students: "Trained Targetologists",
+                experience: "Years Experience"
+            },
             member2: {
                 name: "Name Surname",
                 subtitle: "Position",
@@ -62,13 +72,130 @@ const translations = {
                 description: "Intelligent process automation for increased efficiency and time savings"
             }
         },
+        course: {
+            title: "Targeting - Level 1",
+            subtitle: "Launch Meta Ads (Facebook and Instagram) advertising from scratch in just one month",
+            goal: {
+                title: "Course Objective",
+                description1: "• Launch your first successful advertising campaign, even if you've never worked with targeting before.",
+                description2: "• Stop feeling anxious when opening the Meta advertising cabinet (Facebook and Instagram).",
+                description3: "In the course, you'll get a step-by-step guide that makes the advertising launch process clear and accessible. We'll remove the fear of complex settings, and you'll confidently start attracting clients or scaling your business.",
+                conclusion: "This course is your first step towards confidence and results in targeted advertising!"
+            },
+            format: {
+                title: "Course Format",
+                duration: "Online training lasting 1 month with full support and guidance from me and the team of curators.",
+                includes: "What's included:",
+                feature1: "3 Zoom video calls where we'll discuss complex moments, answer questions, and provide additional support.",
+                feature2: "Support chat where you can quickly get answers to questions and share successes.",
+                feature3: "Lessons on the educational platform with feedback on your homework assignments.",
+                feature4: "Help with launching advertising: we'll work through your first steps together so you can confidently launch your campaign.",
+                support: "The course is built so you feel supported at every stage and guaranteed to achieve results!"
+            },
+            instructor: {
+                title: "About Me",
+                intro: "My name is Daria Kovalchuk. I help beginners understand targeted advertising and launch their first successful campaigns on Facebook and Instagram.",
+                experience: "I've been working in targeting for more than 4.5 years, during which time I've launched hundreds of advertising campaigns, helping my clients increase revenue and find new customers.",
+                methodology: "I created this course together with a professional methodologist to make the training as clear, structured, and results-guaranteed as possible.",
+                stat1: "Graduates",
+                stat2: "New Targetologists",
+                stat3: "Years Experience"
+            },
+            program: {
+                title: "Target Vision Course Program",
+                module1: {
+                    title: "Module 1: Technical Cabinet Setup",
+                    item1: "What is targeted advertising, why it's needed, and what results you can get.",
+                    item2: "Meta Ads advertising cabinet basics: what's important to know for achieving results.",
+                    item3: "Setting up a business account on Instagram and technical profile check for advertising work.",
+                    item4: "Step-by-step advertising cabinet setup for launching the first campaign."
+                },
+                module2: {
+                    title: "Module 2: Advertising Launch Preparation",
+                    item1: "Rules for successful advertising launch: what you need to know before starting.",
+                    item2: "Creating a meaningful foundation: how to properly formulate your offer.",
+                    item3: "Defining target audience: who your clients are and how to find them."
+                },
+                module3: {
+                    title: "Module 3: Creating Advertising Creative",
+                    item1: "How to create creatives for advertising campaigns.",
+                    item2: "Working with templates in Canva: practical advice and effective techniques.",
+                    item3: "Principles of visual and text design for attracting attention."
+                },
+                module4: {
+                    title: "Module 4: Setting Up First Advertising Campaign",
+                    item1: "Step-by-step guide to launching the first ad in the advertising cabinet.",
+                    item2: "Choosing goals, setting budget and audience.",
+                    item3: "Checking advertising campaign before launch: important details."
+                },
+                module5: {
+                    title: "Module 5: Results Analysis and Optimization",
+                    item1: "How to properly evaluate advertising campaign effectiveness.",
+                    item2: "Basic metrics and indicators: what's important to know and what to focus on.",
+                    item3: "Additional materials for advertising campaign analysis."
+                }
+            },
+            pricing: {
+                title: "Pricing Plans",
+                buy: "BUY COURSE",
+                popular: "MOST POPULAR",
+                economy: {
+                    title: "Economy Plan",
+                    feature1: "Access to 5 modules on the platform for self-study.",
+                    feature2: "Additional materials for each module.",
+                    feature3: "General participants chat for communication and experience exchange (without feedback).",
+                    description: "Perfect for those who want to study material at their own pace and independently master basic targeting skills."
+                },
+                comfort: {
+                    title: "Comfort Plan",
+                    feature1: "Access to 5 modules on the platform with homework checking.",
+                    feature2: "Extended additional materials for each module.",
+                    feature3: "Participants chat with feedback from curator: answers to your questions and support at all stages.",
+                    feature4: "Bonus surprise lessons on the platform: unique tips and strategies.",
+                    feature5: "3 group Zoom video calls for discussing complex questions.",
+                    feature6: "100% guarantee of launching your first advertising campaign.",
+                    description: "For those who want not only to master the basics but also get support during learning and advertising launch."
+                },
+                business: {
+                    title: "Business Plan",
+                    feature1: "Access to 5 modules on the platform with homework checking.",
+                    feature2: "Extended additional materials for each module.",
+                    feature3: "Participants chat with feedback from curator.",
+                    feature4: "Bonus surprise lessons on the platform.",
+                    feature5: "3 group Zoom video calls.",
+                    feature6: "1 personal video call with me.",
+                    feature7: "Personal support chat with me.",
+                    feature8: "100% guarantee of launching your first advertising campaign.",
+                    description: "For serious entrepreneurs who want maximum support and personal approach."
+                }
+            },
+            audience: {
+                title: "Who This Course Is For",
+                for: {
+                    title: "✅ The course IS for you if:",
+                    item1: "You're a beginner who has never worked with targeting and wants to master advertising setup basics.",
+                    item2: "You're an entrepreneur who wants to learn to independently launch ads and attract clients for your business.",
+                    item3: "You're considering targeting as a profession and want to take the first step in mastering this in-demand skill.",
+                    item4: "You want to stop being afraid of Meta Ads advertising cabinet and learn to work with it confidently."
+                },
+                not: {
+                    title: "❌ The course is NOT for you if:",
+                    item1: "You already have experience with Meta Ads and confidently set up advertising campaigns.",
+                    item2: "You're looking for advanced strategies, analytics, and scaling.",
+                    item3: "You're not ready to complete practical assignments.",
+                    item4: "You're not ready to dedicate time to learning (at least 2-3 hours per week)."
+                },
+                important: "Important:",
+                level: "This course provides essential knowledge and skills in targeting. After completing it, you'll be able to launch your first ad and successfully work with Meta Ads campaigns."
+            }
+        },
         courses: {
             title: "Courses",
             subtitle: "Professional education for your success",
             course1: {
-                title: "Course 1",
-                subtitle: "Learn the basics of digital marketing",
-                description: "Complete course for beginners who want to enter the world of digital marketing. You will learn the basics, strategies and practical skills needed for success in the digital world."
+                title: "Targeting - Level 1",
+                subtitle: "Complete targeted advertising course",
+                description: "Complete course for beginners who want to enter the world of targeted advertising in Meta Ads."
             }
         },
         portfolio: {
@@ -105,11 +232,16 @@ const translations = {
             },
             courses: "Kurzy",
             coursesItems: {
-                course1: "Kurz 1"
+                course1: "Target Vision"
             },
             portfolio: "Výsledky práce",
             contact: "Kontakt",
             language: "Jazyk"
+        },
+        breadcrumb: {
+            home: "Domů",
+            courses: "Kurzy",
+            target: "Targeting - Level 1"
         },
         hero: {
             line1: "Target Vision",
@@ -119,10 +251,15 @@ const translations = {
             cta2: "Prozkoumat služby"
         },
         about: {
-            title: "O nás",
-            subtitle: "Ředitelka společnosti",
-            description1: "Target Vision je přední digitální agentura specializující se na vytváření luxusních digitálních zážitků, které fascinují a konvertují. Naše přístupy kombinují strategické myšlení s estetickou dokonalostí.",
-            description2: "Věříme v sílu minimalismu, elegance a účelového designu pro vyprávění přesvědčivých příběhů značek, které rezonují se sofistikovaným publikem.",
+            title: "O mně",
+            subtitle: "Ředitelka společnosti & Kreativní expertka",
+            description1: "Jsem Daria Kovalchuk - uznávaná expertka na targetovanou reklamu s více než 6 lety zkušeností. Specializuji se na Meta Ads a pomáhám podnikatelům transformovat jejich byznys prostřednictvím vysoce výkonných reklamních kampaní.",
+            description2: "Za svou kariéru jsem spustila stovky úspěšných kampaní, vycvičila desítky nových targetologů a dosáhla výjimečných výsledků pro klienty z různých odvětví. Moje metodiky zaručují měřitelný růst a ROI.",
+            stats: {
+                clients: "Spokojených klientů",
+                students: "Vycvičených targetologů",
+                experience: "Let zkušeností"
+            },
             member2: {
                 name: "Jméno Příjmení",
                 subtitle: "Pozice",
@@ -158,13 +295,130 @@ const translations = {
                 description: "Inteligentní automatizace procesů pro zvýšení efektivity a úsporu času. Naše řešení kombinují nejmodernější technologie s praktickým přístupem k optimalizaci vašich obchodních procesů."
             }
         },
+        course: {
+            title: "Targeting - Level 1",
+            subtitle: "Spusťte reklamu v Meta Ads (Facebook a Instagram) z nuly už za měsíc",
+            goal: {
+                title: "Cíl kurzu",
+                description1: "• Zapustit svou první úspěšnou reklamu, i když jste nikdy předtím nepracovali s targetem.",
+                description2: "• Přestat pociťovat úzkost při otevírání reklamního kabinetu Meta (Facebook a Instagram).",
+                description3: "Na kurzu získáte postupný návod, který učiní proces spuštění reklamy srozumitelným a dostupným. Odstraníme strach před složitými nastaveními a s jistotou začnete přitahovat klienty nebo škálovat svůj byznys.",
+                conclusion: "Tento kurz je váš první krok k jistotě a výsledkům v targetované reklamě!"
+            },
+            format: {
+                title: "Formát kurzu",
+                duration: "Online výuka v délce 1 měsíc s plným doprovodem a podporou ode mě a týmu kurátorů.",
+                includes: "Co obsahuje:",
+                feature1: "3 video hovory v Zoom, kde probereme složité momenty, odpovíme na otázky a dáme vám dodatečnou podporu.",
+                feature2: "Chat podpory, kde budete moci operativně získávat odpovědi na otázky a sdílet úspěchy.",
+                feature3: "Lekce na vzdělávací platformě se zpětnou vazbou k vašim domácím úkolům.",
+                feature4: "Pomoc se spuštěním reklamy: společně projdeme vaše první kroky, abyste s jistotou spustili svou kampaň.",
+                support: "Kurz je postaven tak, abyste cítili podporu v každé fázi a garantovaně dosáhli výsledku!"
+            },
+            instructor: {
+                title: "O mně",
+                intro: "Jmenuji se Daria Kovalchuk. Pomáhám začátečníkům pochopit targetovanou reklamu a spouštět své první úspěšné kampaně na Facebooku a Instagramu.",
+                experience: "Pracuji v targetu již více než 4,5 roku, za tu dobu jsem spustila stovky reklamních kampaní a pomohla svým klientům zvýšit příjmy a najít nové zákazníky.",
+                methodology: "Tento kurz jsem vytvořila společně s profesionálním metodikem, aby byla výuka maximálně srozumitelná, strukturovaná a dávala garantovaný výsledek.",
+                stat1: "Absolventů",
+                stat2: "Nových targetologů",
+                stat3: "Let zkušeností"
+            },
+            program: {
+                title: "Program kurzu Target Vision",
+                module1: {
+                    title: "Modul 1: Technické nastavení kabinetu",
+                    item1: "Co je targetovaná reklama, proč je potřeba a jaký výsledek můžete získat.",
+                    item2: "Základy reklamního kabinetu Meta Ads: co je důležité vědět pro dosažení výsledku.",
+                    item3: "Nastavení business účtu na Instagramu a technická kontrola profilu pro práci s reklamou.",
+                    item4: "Postupné nastavení reklamního kabinetu pro spuštění první kampaně."
+                },
+                module2: {
+                    title: "Modul 2: Příprava na spuštění reklamy",
+                    item1: "Pravidla úspěšného spuštění reklamy: co je nutné vědět před startem.",
+                    item2: "Vytvoření smyslové báze: jak správně formulovat vaši nabídku.",
+                    item3: "Určení cílové skupiny: kdo jsou vaši klienti a jak je najít."
+                },
+                module3: {
+                    title: "Modul 3: Vytvoření reklamního kreativu",
+                    item1: "Jak vytvořit kreativy pro reklamní kampaň.",
+                    item2: "Práce se šablonami v Canva: praktické rady a efektivní postupy.",
+                    item3: "Principy vizuálního a textového oformování pro přitažení pozornosti."
+                },
+                module4: {
+                    title: "Modul 4: Nastavení první reklamní kampaně",
+                    item1: "Postupný návod na spuštění první reklamy v reklamním kabinetu.",
+                    item2: "Výběr cílů, nastavení rozpočtu a publika.",
+                    item3: "Kontrola reklamní kampaně před spuštěním: důležité detaily."
+                },
+                module5: {
+                    title: "Modul 5: Analýza výsledků a optimalizace",
+                    item1: "Jak správně ohodnotit efektivnost reklamní kampaně.",
+                    item2: "Základní metriky a ukazatele: co je důležité vědět a na co se zaměřit.",
+                    item3: "Dodatečné materiály pro analýzu reklamních kampaní."
+                }
+            },
+            pricing: {
+                title: "Tarify",
+                buy: "ZAKOUPIT KURZ",
+                popular: "NEJPOPULÁRNĚJŠÍ",
+                economy: {
+                    title: "Ekonomický tarif",
+                    feature1: "Přístup k 5 modulům na platformě pro samostudium.",
+                    feature2: "Dodatečné materiály pro každý modul.",
+                    feature3: "Obecný chat účastníků pro komunikaci a výměnu zkušeností (bez zpětné vazby).",
+                    description: "Ideálně vhodné pro ty, kdo chtějí studovat materiál vlastním tempem a samostatně si osvojit základní dovednosti targetu."
+                },
+                comfort: {
+                    title: "Komfortní tarif",
+                    feature1: "Přístup k 5 modulům na platformě s kontrolou domácích úkolů.",
+                    feature2: "Rozšířené dodatečné materiály pro každý modul.",
+                    feature3: "Chat účastníků se zpětnou vazbou od kurátora: odpovědi na vaše otázky a podpora ve všech fázích.",
+                    feature4: "Bonusové lekce-překvapení na platformě: unikátní fišky a strategie.",
+                    feature5: "3 skupinové video hovory v Zoom pro rozbor složitých otázek.",
+                    feature6: "100% garance spuštění vaší první reklamní kampaně.",
+                    description: "Pro ty, kdo chtějí nejen osvojit si základy, ale také získat podporu v procesu učení a spuštění reklamy."
+                },
+                business: {
+                    title: "Business tarif",
+                    feature1: "Přístup k 5 modulům na platformě s kontrolou domácích úkolů.",
+                    feature2: "Rozšířené dodatečné materiály pro každý modul.",
+                    feature3: "Chat účastníků se zpětnou vazbou od kurátora.",
+                    feature4: "Bonusové lekce-překvapení na platformě.",
+                    feature5: "3 skupinové video hovory v Zoom.",
+                    feature6: "1 osobní video hovor se mnou.",
+                    feature7: "Osobní chat podpory se mnou.",
+                    feature8: "100% garance spuštění vaší první reklamní kampaně.",
+                    description: "Pro vážné podnikatele, kteří chtějí maximální podporu a osobní přístup."
+                }
+            },
+            audience: {
+                title: "Pro koho je tento kurz",
+                for: {
+                    title: "✅ Kurz JE pro vás, pokud:",
+                    item1: "Jste začátečník, který nikdy nepracoval s targetem a chce osvojit si základy nastavení reklamy.",
+                    item2: "Jste podnikatel, který se chce naučit samostatně spouštět reklamy a přitahovat klienty pro svůj byznys.",
+                    item3: "Uvažujete o targetu jako profesi a chcete udělat první krok v osvojení požadované dovednosti.",
+                    item4: "Chcete přestat se bát reklamního kabinetu Meta Ads a naučit se s ním pracovat jistě."
+                },
+                not: {
+                    title: "❌ Kurz NENÍ pro vás, pokud:",
+                    item1: "Již máte zkušenosti s Meta Ads a jistě nastavujete reklamní kampaně.",
+                    item2: "Hledáte pokročilé strategie, analytiku a škálování.",
+                    item3: "Nejste připraveni plnit praktické úkoly.",
+                    item4: "Nejste připraveni věnovat čas učení (alespoň 2-3 hodiny týdně)."
+                },
+                important: "Důležité:",
+                level: "Tento kurz dává základní znalosti a dovednosti v taргetu. Po jeho absolvování budete moci spustit svou první reklamu a úspěšně pracovat s Meta Ads kampaněmi."
+            }
+        },
         courses: {
             title: "Kurzy",
             subtitle: "Profesionální vzdělávání pro váš úspěch",
             course1: {
-                title: "Kurz 1",
-                subtitle: "Naučte se základy digitálního marketingu",
-                description: "Kompletní kurz pro začátečníky, kteří chtějí proniknout do světa digitálního marketingu. Naučíte se základy, strategie a praktické dovednosti potřebné pro úspěch v digitálním světě."
+                title: "Targeting - Level 1",
+                subtitle: "Kompletní kurz targetované reklamy",
+                description: "Kompletní kurz targetované reklamy pro začátečníky v Meta Ads."
             }
         },
         portfolio: {
@@ -201,24 +455,34 @@ const translations = {
             },
             courses: "Курсы",
             coursesItems: {
-                course1: "Курс 1"
+                course1: "Target Vision"
             },
             portfolio: "Портфолио",
             contact: "Контакты",
             language: "Язык"
         },
+        breadcrumb: {
+            home: "Главная",
+            courses: "Курсы",
+            target: "Targeting - Level 1"
+        },
         hero: {
-            line1: "Поднимите свое",
-            line2: "Цифровое присутствие",
-            subtitle: "Премиальные решения для амбициозных брендов",
+            line1: "Target Vision",
+            line2: "Цифровое Совершенство",
+            subtitle: "Премиальные цифровые решения для амбициозных брендов",
             cta1: "Начать",
             cta2: "Изучить услуги"
         },
         about: {
-            title: "О нас",
-            subtitle: "Цифровой стратег и креативный директор",
-            description1: "С более чем десятилетним опытом в цифровом маркетинге и развитии брендов я специализируюсь на создании роскошных цифровых впечатлений, которые очаровывают и конвертируют. Мой подход сочетает стратегическое мышление с эстетическим совершенством.",
-            description2: "Я верю в силу минимализма, элегантности и целенаправленного дизайна для создания убедительных историй брендов, которые находят отклик у искушенной аудитории.",
+            title: "Обо мне",
+            subtitle: "Директор компании & Креативный эксперт",
+            description1: "Я Дарья Ковальчук - признанный эксперт по таргетированной рекламе с более чем 6-летним опытом. Специализируюсь на Meta Ads и помогаю предпринимателям трансформировать свой бизнес через высокоэффективные рекламные кампании.",
+            description2: "За свою карьеру я запустила сотни успешных кампаний, обучила десятки новых таргетологов и достигла исключительных результатов для клиентов из различных отраслей. Мои методики гарантируют измеримый рост и ROI.",
+            stats: {
+                clients: "Довольных клиентов",
+                students: "Обученных таргетологов",
+                experience: "Лет опыта"
+            },
             member2: {
                 name: "Имя Фамилия",
                 subtitle: "Должность",
@@ -249,13 +513,130 @@ const translations = {
                 description: "Интеллектуальная автоматизация процессов для повышения эффективности и экономии времени"
             }
         },
+        course: {
+            title: "Targeting - Level 1",
+            subtitle: "Запустите рекламу в Meta Ads (Facebook и Instagram) с нуля уже через месяц",
+            goal: {
+                title: "Цель курса",
+                description1: "• Запустить свою первую успешную рекламу, даже если вы никогда раньше не работали с таргетом.",
+                description2: "• Перестать испытывать тревогу, открывая рекламный кабинет Meta (Facebook и Instagram).",
+                description3: "На курсе вы получите пошаговое руководство, которое сделает процесс запуска рекламы понятным и доступным. Мы уберем страх перед сложными настройками, и вы с уверенностью начнете привлекать клиентов или масштабировать свой бизнес.",
+                conclusion: "Этот курс — ваш первый шаг к уверенности и результатам в таргетированной рекламе!"
+            },
+            format: {
+                title: "Формат курса",
+                duration: "Онлайн-обучение длительностью 1 месяц с полным сопровождением и поддержкой от меня и команды кураторов.",
+                includes: "Что входит:",
+                feature1: "3 созвона в Zoom, где мы разберем сложные моменты, ответим на вопросы и дадим вам дополнительную поддержку.",
+                feature2: "Чат поддержки, где вы сможете оперативно получать ответы на вопросы и делиться успехами.",
+                feature3: "Уроки на образовательной платформе с обратной связью по вашим домашним заданиям.",
+                feature4: "Помощь в запуске рекламы: мы вместе проработаем ваши первые шаги, чтобы вы уверенно запустили свою кампанию.",
+                support: "Курс построен так, чтобы вы чувствовали поддержку на каждом этапе и гарантированно достигли результата!"
+            },
+            instructor: {
+                title: "Обо мне",
+                intro: "Меня зовут Дарья Ковальчук. Я помогаю новичкам разобраться в таргетированной рекламе и запускать свои первые успешные кампании в Facebook и Instagram.",
+                experience: "Я работаю в таргете уже более 4,5 лет, за это время я запустила сотни рекламных кампаний, помогая своим клиентам увеличивать доход и находить новых покупателей.",
+                methodology: "Этот курс я создала вместе с профессиональным методологом для того, чтобы обучение было максимально понятным, структурированным и давало гарантированный результат.",
+                stat1: "Выпускников",
+                stat2: "Новых таргетологов",
+                stat3: "Лет опыта"
+            },
+            program: {
+                title: "Программа курса Target Vision",
+                module1: {
+                    title: "Модуль 1: Техническая настройка кабинета",
+                    item1: "Что такое таргетированная реклама, зачем она нужна, и какой результат вы можете получить.",
+                    item2: "Основы рекламного кабинета Meta Ads: что важно знать для достижения результата.",
+                    item3: "Настройка бизнес-аккаунта в Instagram и техническая проверка профиля для работы с рекламой.",
+                    item4: "Пошаговая настройка рекламного кабинета для запуска первой кампании."
+                },
+                module2: {
+                    title: "Модуль 2: Подготовка к запуску рекламы",
+                    item1: "Правила успешного запуска рекламы: что необходимо знать перед стартом.",
+                    item2: "Создание смысловой базы: как правильно сформулировать ваше предложение.",
+                    item3: "Определение целевой аудитории: кто ваши клиенты и как их найти."
+                },
+                module3: {
+                    title: "Модуль 3: Создание рекламного креатива",
+                    item1: "Как создать креативы для рекламной кампании.",
+                    item2: "Работа с шаблонами в Canva: практические советы и эффективные приемы.",
+                    item3: "Принципы визуального и текстового оформления для привлечения внимания."
+                },
+                module4: {
+                    title: "Модуль 4: Настройка первой рекламной кампании",
+                    item1: "Пошаговое руководство по запуску первой рекламы в рекламном кабинете.",
+                    item2: "Выбор целей, настройки бюджета и аудитории.",
+                    item3: "Проверка рекламной кампании перед запуском: важные детали."
+                },
+                module5: {
+                    title: "Модуль 5: Анализ результатов и оптимизация",
+                    item1: "Как правильно оценить эффективность рекламной кампании.",
+                    item2: "Основные метрики и показатели: что важно знать и на что обращать внимание.",
+                    item3: "Дополнительные материалы для анализа рекламных кампаний."
+                }
+            },
+            pricing: {
+                title: "Тарифы",
+                buy: "ПРИОБРЕСТИ КУРС",
+                popular: "САМЫЙ ПОПУЛЯРНЫЙ",
+                economy: {
+                    title: "Эконом Тариф",
+                    feature1: "Доступ к 5 модулям на платформе для самостоятельного изучения.",
+                    feature2: "Дополнительные материалы для каждого модуля.",
+                    feature3: "Общий чат участников для общения и обмена опытом (без обратной связи).",
+                    description: "Идеально подходит для тех, кто хочет изучить материал в удобном темпе и самостоятельно освоить базовые навыки таргета."
+                },
+                comfort: {
+                    title: "Комфорт Тариф",
+                    feature1: "Доступ к 5 модулям на платформе с проверкой домашних заданий.",
+                    feature2: "Расширенные дополнительные материалы по каждому модулю.",
+                    feature3: "Чат участников с обратной связью от куратора: ответы на ваши вопросы и поддержка на всех этапах.",
+                    feature4: "Бонусные уроки-сюрпризы на платформе: уникальные фишки и стратегии.",
+                    feature5: "3 групповых созвона в Zoom для разбора сложных вопросов.",
+                    feature6: "100% гарантия запуска вашей первой рекламной кампании.",
+                    description: "Для тех, кто хочет не только освоить базу, но и получить поддержку в процессе обучения и запуске рекламы."
+                },
+                business: {
+                    title: "Бизнес Тариф",
+                    feature1: "Доступ к 5 модулям на платформе с проверкой домашних заданий.",
+                    feature2: "Расширенные дополнительные материалы по каждому модулю.",
+                    feature3: "Чат участников с обратной связью от куратора.",
+                    feature4: "Бонусные уроки-сюрпризы на платформе.",
+                    feature5: "3 групповых созвона в Zoom.",
+                    feature6: "1 личный созвон со мной.",
+                    feature7: "Чат поддержки лично со мной.",
+                    feature8: "100% гарантия запуска вашей первой рекламной кампании.",
+                    description: "Для серьезных предпринимателей, которые хотят максимальную поддержку и персональный подход."
+                }
+            },
+            audience: {
+                title: "Для кого этот курс",
+                for: {
+                    title: "✅ Курс ДЛЯ вас, если:",
+                    item1: "Вы новичок, который никогда не работал с таргетом и хочет освоить основы настройки рекламы.",
+                    item2: "Вы предприниматель, который хочет научиться самостоятельно запускать рекламу и привлекать клиентов для своего бизнеса.",
+                    item3: "Вы рассматриваете таргет как профессию и хотите сделать первый шаг в освоении востребованного навыка.",
+                    item4: "Вы хотите перестать бояться рекламного кабинета Meta Ads и научиться работать с ним уверенно."
+                },
+                not: {
+                    title: "❌ Курс НЕ для вас, если:",
+                    item1: "Вы уже имеете опыт работы с Meta Ads и уверенно настраиваете рекламные кампании.",
+                    item2: "Вы ищете углубленные стратегии, аналитику и масштабирование.",
+                    item3: "Вы не готовы выполнять практические задания.",
+                    item4: "Вы не готовы выделить время на обучение (хотя бы 2–3 часа в неделю)."
+                },
+                important: "Важно:",
+                level: "Этот курс дает базовые знания и навыки в таргете. После его прохождения вы сможете запустить свою первую рекламу и успешно работать с кампаниями Meta Ads."
+            }
+        },
         courses: {
             title: "Курсы",
             subtitle: "Профессиональное образование для вашего успеха",
             course1: {
-                title: "Курс 1",
-                subtitle: "Изучите основы цифрового маркетинга",
-                description: "Полный курс для начинающих, которые хотят войти в мир цифрового маркетинга. Вы изучите основы, стратегии и практические навыки, необходимые для успеха в цифровом мире."
+                title: "Targeting - Level 1",
+                subtitle: "Полный курс таргетированной рекламы",
+                description: "Компетентный курс таргетированной рекламы для начинающих в Meta Ads."
             }
         },
         portfolio: {
@@ -274,7 +655,7 @@ const translations = {
             }
         },
         footer: {
-            rights: "© 2024 Daria Kovalchuk. Все права защищены.",
+            rights: "© 2024 Target Vision. Все права защищены.",
             tagline: "Создано с совершенством"
         }
     },
@@ -292,24 +673,34 @@ const translations = {
             },
             courses: "Курси",
             coursesItems: {
-                course1: "Курс 1"
+                course1: "Target Vision"
             },
             portfolio: "Портфоліо",
             contact: "Контакти",
             language: "Мова"
         },
+        breadcrumb: {
+            home: "Головна",
+            courses: "Курси",
+            target: "Targeting - Level 1"
+        },
         hero: {
-            line1: "Підніміть свою",
-            line2: "Цифрову присутність",
-            subtitle: "Преміальні рішення для амбітних брендів",
+            line1: "Target Vision",
+            line2: "Цифрова Досконалість",
+            subtitle: "Преміальні цифрові рішення для амбітних брендів",
             cta1: "Почати",
             cta2: "Вивчити послуги"
         },
         about: {
-            title: "Про нас",
-            subtitle: "Цифровий стратег і креативний директор",
-            description1: "З більш ніж десятирічним досвідом у цифровому маркетингу та розвитку брендів я спеціалізуюся на створенні розкішних цифрових вражень, які зачаровують та конвертують. Мій підхід поєднує стратегічне мислення з естетичною досконалістю.",
-            description2: "Я вірю в силу мінімалізму, елегантності та цілеспрямованого дизайну для створення переконливих історій брендів, які знаходять відгук у витонченої аудиторії.",
+            title: "Про мене",
+            subtitle: "Директор компанії & Креативний експерт",
+            description1: "Я Дарія Ковальчук - визнаний експерт з таргетованої реклами з понад 6-річним досвідом. Спеціалізуюся на Meta Ads і допомагаю підприємцям трансформувати свій бізнес через високоефективні рекламні кампанії.",
+            description2: "За свою кар'єру я запустила сотні успішних кампаній, навчила десятки нових таргетологів і досягла винятковихрезультатів для клієнтів з різних галузей. Мої методики гарантують вимірювальний ріст і ROI.",
+            stats: {
+                clients: "Задоволених клієнтів",
+                students: "Навчених таргетологів",
+                experience: "Років досвіду"
+            },
             member2: {
                 name: "Ім'я Прізвище",
                 subtitle: "Посада",
@@ -340,13 +731,120 @@ const translations = {
                 description: "Інтелектуальна автоматизація процесів для підвищення ефективності та економії часу"
             }
         },
+        course: {
+            title: "Targeting - Level 1",
+            subtitle: "Запустіть рекламу в Meta Ads (Facebook та Instagram) з нуля вже через місяць",
+            goal: {
+                title: "Мета курсу",
+                description1: "• Запустити вашу першу успішну рекламу, навіть якщо ви ніколи раніше не працювали з таргетингом.",
+                description2: "• Перестати відчувати тривогу, відкриваючи рекламний кабінет Meta (Facebook та Instagram).",
+                description3: "На курсі ви отримаєте покрокове керівництво, яке зробить процес запуску реклами зрозумілим та доступним.",
+                conclusion: "Цей курс — ваш перший крок до впевненості та результатів у таргетованій рекламі!"
+            },
+            format: {
+                title: "Формат курсу",
+                duration: "Онлайн-навчання тривалістю 1 місяць з повним супроводом та підтримкою від мене та команди кураторів.",
+                includes: "Що входить:",
+                feature1: "3 дзвінки в Zoom, де ми розберемо складні моменти та дамо додаткову підтримку.",
+                feature2: "Чат підтримки, де ви зможете оперативно отримувати відповіді на запитання.",
+                feature3: "Уроки на освітній платформі зі зворотним зв'язком.",
+                feature4: "Допомога в запуску реклами разом з нами."
+            },
+            program: {
+                title: "Програма курсу Targeting - Level 1",
+                module1: {
+                    title: "Модуль 1: Технічне налаштування кабінету",
+                    item1: "Що таке таргетована реклама, навіщо вона потрібна, і який результат ви можете отримати.",
+                    item2: "Основи рекламного кабінету Meta Ads: що важливо знати для досягнення результату.",
+                    item3: "Налаштування бізнес-акаунта в Instagram та технічна перевірка профілю для роботи з рекламою.",
+                    item4: "Покрокове налаштування рекламного кабінету для запуску першої кампанії."
+                },
+                module2: {
+                    title: "Модуль 2: Підготовка до запуску реклами",
+                    item1: "Правила успішного запуску реклами: що необхідно знати перед стартом.",
+                    item2: "Створення смислової бази: як правильно сформулювати вашу пропозицію.",
+                    item3: "Визначення цільової аудиторії: хто ваші клієнти і як їх знайти."
+                },
+                module3: {
+                    title: "Модуль 3: Створення рекламного креативу",
+                    item1: "Як створити креативи для рекламної кампанії.",
+                    item2: "Робота з шаблонами в Canva: практичні поради та ефективні прийоми.",
+                    item3: "Принципи візуального та текстового оформлення для привернення уваги."
+                },
+                module4: {
+                    title: "Модуль 4: Налаштування першої рекламної кампанії",
+                    item1: "Покрокове керівництво по запуску першої реклами в рекламному кабінеті.",
+                    item2: "Вибір цілей, налаштування бюджету та аудиторії.",
+                    item3: "Перевірка рекламної кампанії перед запуском: важливі деталі."
+                },
+                module5: {
+                    title: "Модуль 5: Аналіз результатів та оптимізація",
+                    item1: "Як правильно оцінити ефективність рекламної кампанії.",
+                    item2: "Основні метрики та показники: що важливо знати і на що звертати увагу.",
+                    item3: "Додаткові матеріали для аналізу рекламних кампаній."
+                }
+            },
+            pricing: {
+                title: "Тарифи",
+                buy: "ПРИДБАТИ КУРС",
+                popular: "НАЙПОПУЛЯРНІШИЙ",
+                economy: {
+                    title: "Економ Тариф",
+                    feature1: "Доступ до 5 модулів на платформі для самостійного вивчення.",
+                    feature2: "Додаткові матеріали для кожного модуля.",
+                    feature3: "Загальний чат учасників для спілкування та обміну досвідом (без зворотного зв'язку).",
+                    description: "Ідеально підходить для тих, хто хоче вивчити матеріал у зручному темпі та самостійно освоїти базові навички таргету."
+                },
+                comfort: {
+                    title: "Комфорт Тариф",
+                    feature1: "Доступ до 5 модулів на платформі з перевіркою домашніх завдань.",
+                    feature2: "Розширені додаткові матеріали по кожному модулю.",
+                    feature3: "Чат учасників зі зворотним зв'язком від куратора: відповіді на ваші питання та підтримка на всіх етапах.",
+                    feature4: "Бонусні уроки-сюрпризи на платформі: унікальні фішки та стратегії.",
+                    feature5: "3 групові дзвінки в Zoom для розбору складних питань.",
+                    feature6: "100% гарантія запуску вашої першої рекламної кампанії.",
+                    description: "Для тих, хто хоче не тільки освоїти базу, але й отримати підтримку в процесі навчання та запуску реклами."
+                },
+                business: {
+                    title: "Бізнес Тариф",
+                    feature1: "Доступ до 5 модулів на платформі з перевіркою домашніх завдань.",
+                    feature2: "Розширені додаткові матеріали по кожному модулю.",
+                    feature3: "Чат учасників зі зворотним зв'язком від куратора.",
+                    feature4: "Бонусні уроки-сюрпризи на платформі.",
+                    feature5: "3 групові дзвінки в Zoom.",
+                    feature6: "1 особистий дзвінок зі мною.",
+                    feature7: "Чат підтримки особисто зі мною.",
+                    feature8: "100% гарантія запуску вашої першої рекламної кампанії.",
+                    description: "Для серйозних підприємців, які хочуть максимальну підтримку та персональний підхід."
+                }
+            },
+            audience: {
+                title: "Для кого цей курс",
+                for: {
+                    title: "✅ Курс ДЛЯ вас, якщо:",
+                    item1: "Ви новачок, який ніколи не працював з таргетом і хоче освоїти основи налаштування реклами.",
+                    item2: "Ви підприємець, який хоче навчитися самостійно запускати рекламу та залучати клієнтів для свого бізнесу.",
+                    item3: "Ви розглядаєте таргет як професію і хочете зробити перший крок в освоєнні затребуваної навички.",
+                    item4: "Ви хочете перестати боятися рекламного кабінету Meta Ads і навчитися працювати з ним впевнено."
+                },
+                not: {
+                    title: "❌ Курс НЕ для вас, якщо:",
+                    item1: "Ви вже маєте досвід роботи з Meta Ads і впевнено налаштовуєте рекламні кампанії.",
+                    item2: "Ви шукаєте поглиблені стратегії, аналітику та масштабування.",
+                    item3: "Ви не готові виконувати практичні завдання.",
+                    item4: "Ви не готові виділити час на навчання (хоча б 2–3 години на тиждень)."
+                },
+                important: "Важливо:",
+                level: "Цей курс дає базові знання та навички в таргеті. Після його проходження ви зможете запустити свою першу рекламу та успішно працювати з кампаніями Meta Ads."
+            }
+        },
         courses: {
             title: "Курси",
             subtitle: "Професійна освіта для вашого успіху",
             course1: {
-                title: "Курс 1",
-                subtitle: "Вивчіть основи цифрового маркетингу",
-                description: "Повний курс для початківців, які хочуть увійти в світ цифрового маркетингу. Ви вивчите основи, стратегії та практичні навички, необхідні для успіху в цифровому світі."
+                title: "Targeting - Level 1",
+                subtitle: "Повний курс таргетованої реклами",
+                description: "Повний курс таргетованої реклами для початківців в Meta Ads."
             }
         },
         portfolio: {
@@ -699,6 +1197,23 @@ function setLanguage(lang) {
         } else {
             element.textContent = value;
         }
+    });
+
+    // Update all label translations
+    document.querySelectorAll('[data-i18n-label]').forEach(element => {
+        const key = element.getAttribute('data-i18n-label');
+        const keys = key.split('.');
+        let value = translations[lang];
+        for (const k of keys) {
+            if (value && value[k]) {
+                value = value[k];
+            } else {
+                console.warn('Label translation not found for key:', key, 'in language:', lang);
+                value = key;
+                break;
+            }
+        }
+        element.setAttribute('data-label', value);
     });
 
     // Update all placeholder translations
