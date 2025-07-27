@@ -21,6 +21,50 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Meta Pixel Code - Course Page -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Enhanced configuration with error handling
+    try {
+        fbq('init', '755496897174963', {
+            external_id: 'target_vision_course'
+        });
+        
+        // Course-specific PageView tracking
+        fbq('track', 'PageView', {
+            source: 'website',
+            page_type: 'product_detail',
+            product_name: 'targeting_level_1',
+            product_category: 'courses'
+        });
+        
+        // ViewContent for course as product
+        fbq('track', 'ViewContent', {
+            content_type: 'product',
+            content_name: 'Targeting - Level 1',
+            content_category: 'courses',
+            value: 2000,
+            currency: 'CZK',
+            content_ids: ['course_targeting_l1']
+        });
+    } catch (e) {
+        // Silently handle ad blocker interference
+        console.info('Meta Pixel blocked by privacy tools - this is normal');
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=755496897174963&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
     <style>
         .course-hero {
             background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
@@ -519,6 +563,55 @@
                 });
             });
         });
+        
+        // Course page interaction tracking
+        if (typeof fbq !== 'undefined') {
+            try {
+                // Track pricing card views
+                const pricingCards = document.querySelectorAll('.pricing-card');
+                pricingCards.forEach((card, index) => {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                try {
+                                    fbq('track', 'ViewContent', {
+                                        content_type: 'product_variant',
+                                        content_name: `Pricing Option ${index + 1}`,
+                                        content_category: 'course_pricing'
+                                    });
+                                } catch (e) {
+                                    // Silently handle tracking errors
+                                }
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.5 });
+                    observer.observe(card);
+                });
+                
+                // Track purchase button clicks
+                const buyButtons = document.querySelectorAll('.buy-button, .btn-primary');
+                buyButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        try {
+                            fbq('track', 'InitiateCheckout', {
+                                content_type: 'product',
+                                content_name: 'Targeting - Level 1',
+                                content_category: 'courses',
+                                value: 2000,
+                                currency: 'CZK',
+                                content_ids: ['course_targeting_l1']
+                            });
+                        } catch (e) {
+                            // Silently handle tracking errors
+                        }
+                    });
+                });
+            } catch (e) {
+                // Silently handle interaction tracking errors
+                console.info('Meta Pixel interaction tracking blocked - this is normal');
+            }
+        }
     </script>
 </body>
 </html> 

@@ -20,6 +20,46 @@
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Meta Pixel Code - Advanced Setup -->
+    <script>
+    // Graceful handling for ad blockers
+    window.fbAsyncInit = function() {
+        // Pixel loaded successfully
+    };
+    
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Enhanced configuration with error handling
+    try {
+        fbq('init', '755496897174963', {
+            external_id: 'target_vision_web'
+        });
+        
+        // Enhanced PageView with custom parameters
+        fbq('track', 'PageView', {
+            source: 'website',
+            page_type: 'home'
+        });
+        
+        // Enhanced data matching
+        fbq('set', 'autoConfig', false, '755496897174963');
+    } catch (e) {
+        // Silently handle ad blocker interference
+        console.info('Meta Pixel blocked by privacy tools - this is normal');
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=755496897174963&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Navigation -->
@@ -573,6 +613,39 @@
                     submitButton.classList.add('success');
                     submitButton.textContent = '✅ Odesláno!';
                     
+                    // Enhanced Facebook Pixel tracking with error handling
+                    if (typeof fbq !== 'undefined') {
+                        try {
+                            // Lead event with enhanced data
+                            fbq('track', 'Lead', {
+                                content_name: service,
+                                content_category: 'contact_form',
+                                value: 100, // Estimated lead value
+                                currency: 'CZK',
+                                source: 'website',
+                                lead_type: 'contact_form'
+                            });
+                            
+                            // Contact event
+                            fbq('track', 'Contact', {
+                                content_name: service,
+                                newsletter_signup: newsletter
+                            });
+                            
+                            // Newsletter subscription if checked
+                            if (newsletter) {
+                                fbq('track', 'Subscribe', {
+                                    value: 50,
+                                    currency: 'CZK',
+                                    source: 'contact_form'
+                                });
+                            }
+                        } catch (e) {
+                            // Silently handle tracking errors
+                            console.info('Meta Pixel tracking blocked - this is normal');
+                        }
+                    }
+                    
                     // Show success modal after short delay
                     setTimeout(() => {
                         showSuccessModal();
@@ -610,6 +683,23 @@
                 
                 setTimeout(() => {
                     window.open(telegramURL, '_blank');
+                    
+                    // Track fallback method as Lead too
+                    if (typeof fbq !== 'undefined') {
+                        try {
+                            fbq('track', 'Lead', {
+                                content_name: service || 'Unknown Service',
+                                content_category: 'contact_form_fallback',
+                                value: 100,
+                                currency: 'CZK',
+                                source: 'telegram_fallback',
+                                lead_type: 'telegram_redirect'
+                            });
+                        } catch (e) {
+                            // Silently handle tracking errors
+                            console.info('Meta Pixel fallback tracking blocked - this is normal');
+                        }
+                    }
                     
                     // Show modal even for fallback
                     showSuccessModal();
@@ -682,6 +772,121 @@
         document.getElementById('privacyModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePrivacyModal();
+            }
+        });
+        
+        // Enhanced Analytics Tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof fbq === 'undefined') return;
+            
+            try {
+            
+            // Service cards ViewContent tracking
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const serviceName = card.querySelector('h3')?.textContent || `Service ${index + 1}`;
+                            fbq('track', 'ViewContent', {
+                                content_type: 'service',
+                                content_name: serviceName,
+                                content_category: 'services',
+                                value: 500,
+                                currency: 'CZK'
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(card);
+            });
+            
+            // Portfolio/Gallery engagement
+            const portfolioItems = document.querySelectorAll('.portfolio-item, .gallery-item');
+            portfolioItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    fbq('track', 'ViewContent', {
+                        content_type: 'portfolio',
+                        content_name: `Portfolio Item ${index + 1}`,
+                        content_category: 'portfolio'
+                    });
+                });
+            });
+            
+            // Course engagement tracking
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach(card => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const courseName = card.querySelector('h3')?.textContent || 'Course';
+                            fbq('track', 'ViewContent', {
+                                content_type: 'product',
+                                content_name: courseName,
+                                content_category: 'courses',
+                                value: 2000,
+                                currency: 'CZK'
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                observer.observe(card);
+            });
+            
+            // CTA button clicks
+            const ctaButtons = document.querySelectorAll('.btn-primary, .cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim();
+                    fbq('track', 'InitiateCheckout', {
+                        content_name: buttonText,
+                        content_category: 'cta_click',
+                        value: 1000,
+                        currency: 'CZK'
+                    });
+                });
+            });
+            
+            // Scroll depth tracking
+            let scrollDepths = [25, 50, 75, 90];
+            let trackedDepths = [];
+            
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+                
+                scrollDepths.forEach(depth => {
+                    if (scrollPercent >= depth && !trackedDepths.includes(depth)) {
+                        trackedDepths.push(depth);
+                        fbq('trackCustom', 'ScrollDepth', {
+                            scroll_depth: depth,
+                            page_type: 'home'
+                        });
+                    }
+                });
+            });
+            
+            // Time on page tracking
+            let timeOnPage = 0;
+            const timeTracker = setInterval(() => {
+                timeOnPage += 10;
+                if (timeOnPage === 30) { // 30 seconds
+                    fbq('trackCustom', 'TimeOnPage', {
+                        time_spent: '30_seconds',
+                        engagement_level: 'medium'
+                    });
+                } else if (timeOnPage === 120) { // 2 minutes
+                    fbq('trackCustom', 'TimeOnPage', {
+                        time_spent: '2_minutes',
+                        engagement_level: 'high'
+                    });
+                    clearInterval(timeTracker);
+                }
+            }, 10000);
+            } catch (e) {
+                // Silently handle analytics tracking errors
+                console.info('Meta Pixel analytics tracking blocked - this is normal');
             }
         });
     </script>

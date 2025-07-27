@@ -231,6 +231,25 @@ const translations = {
             required: "Please fill in all required fields.",
             privacy: "You must agree to the processing of personal data."
         },
+        privacy: {
+            title: "Privacy Policy",
+            contact: {
+                title: "Contact Form",
+                text: "Your personal data (name, email, phone, message) is used exclusively to respond to your inquiry and provide our services. Data is not shared with third parties."
+            },
+            newsletter: {
+                title: "Newsletter",
+                text: "If you agree to receive newsletters, your email will be used to send information about our services. You can unsubscribe at any time."
+            },
+            rights: {
+                title: "Your Rights",
+                text: "You have the right to access your data, correct it, delete it, or limit its processing. Contact us to exercise your rights."
+            },
+            contact_info: {
+                title: "Contact",
+                text: "Data Controller: Target Vision<br>Email: info@targetvision.cz"
+            }
+        },
         modal: {
             title: "Thank you for your message!",
             message: "Your inquiry has been successfully sent. We will get back to you within 24 hours with answers to your questions.",
@@ -477,6 +496,25 @@ const translations = {
             required: "Prosím vyplňte všechna povinná pole.",
             privacy: "Musíte souhlasit se zpracováním osobních údajů."
         },
+        privacy: {
+            title: "Zásady ochrany osobních údajů",
+            contact: {
+                title: "Kontaktní formulář",
+                text: "Vaše osobní údaje (jméno, email, telefon, zpráva) používáme výhradně pro zodpovězení vaší poptávky a poskytnutí našich služeb. Údaje nejsou předávány třetím stranám."
+            },
+            newsletter: {
+                title: "Newsletter",
+                text: "Pokud souhlasíte s odběrem novinek, váš email bude použit pro zasílání informací o našich službách. Odhlásit se můžete kdykoli."
+            },
+            rights: {
+                title: "Vaše práva",
+                text: "Máte právo na přístup ke svým údajům, jejich opravu, výmaz nebo omezení zpracování. Kontaktujte nás pro uplatnění svých práv."
+            },
+            contact_info: {
+                title: "Kontakt",
+                text: "Správce údajů: Target Vision<br>Email: info@targetvision.cz"
+            }
+        },
         modal: {
             title: "Děkujeme za vaši zprávu!",
             message: "Vaše poptávka byla úspěšně odeslána. Ozveme se vám do 24 hodin s odpovědí na vaše dotazy.",
@@ -718,6 +756,25 @@ const translations = {
             required: "Пожалуйста, заполните все обязательные поля.",
             privacy: "Вы должны согласиться на обработку персональных данных."
         },
+        privacy: {
+            title: "Политика конфиденциальности",
+            contact: {
+                title: "Контактная форма",
+                text: "Ваши персональные данные (имя, email, телефон, сообщение) используются исключительно для ответа на ваш запрос и предоставления наших услуг. Данные не передаются третьим лицам."
+            },
+            newsletter: {
+                title: "Рассылка",
+                text: "Если вы согласились на получение новостей, ваш email будет использоваться для отправки информации о наших услугах. Вы можете отписаться в любое время."
+            },
+            rights: {
+                title: "Ваши права",
+                text: "Вы имеете право на доступ к своим данным, их исправление, удаление или ограничение обработки. Свяжитесь с нами для реализации ваших прав."
+            },
+            contact_info: {
+                title: "Контакт",
+                text: "Контролер данных: Target Vision<br>Email: info@targetvision.cz"
+            }
+        },
         modal: {
             title: "Спасибо за ваше сообщение!",
             message: "Ваш запрос был успешно отправлен. Мы свяжемся с вами в течение 24 часов с ответами на ваши вопросы.",
@@ -948,6 +1005,25 @@ const translations = {
         validation: {
             required: "Будь ласка, заповніть всі обов'язкові поля.",
             privacy: "Ви повинні погодитися на обробку персональних даних."
+        },
+        privacy: {
+            title: "Політика конфіденційності",
+            contact: {
+                title: "Контактна форма",
+                text: "Ваші персональні дані (ім'я, email, телефон, повідомлення) використовуються виключно для відповіді на ваш запит та надання наших послуг. Дані не передаються третім особам."
+            },
+            newsletter: {
+                title: "Розсилка",
+                text: "Якщо ви погодилися на отримання новин, ваш email буде використовуватися для надсилання інформації про наші послуги. Ви можете відписатися в будь-який час."
+            },
+            rights: {
+                title: "Ваші права",
+                text: "Ви маєте право на доступ до своїх даних, їх виправлення, видалення або обмеження обробки. Зв'яжіться з нами для реалізації ваших прав."
+            },
+            contact_info: {
+                title: "Контакт",
+                text: "Контролер даних: Target Vision<br>Email: info@targetvision.cz"
+            }
         },
         modal: {
             title: "Дякуємо за ваше повідомлення!",

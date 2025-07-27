@@ -20,6 +20,49 @@
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Meta Pixel Code - Service Page -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Enhanced configuration with error handling
+    try {
+        fbq('init', '755496897174963', {
+            external_id: 'target_vision_consulting'
+        });
+        
+        // Service-specific PageView tracking
+        fbq('track', 'PageView', {
+            source: 'website',
+            page_type: 'service_detail',
+            service_name: 'consulting',
+            service_category: 'consulting'
+        });
+        
+        // ViewContent for consulting service
+        fbq('track', 'ViewContent', {
+            content_type: 'service',
+            content_name: 'Konzultace',
+            content_category: 'services',
+            value: 3000,
+            currency: 'CZK'
+        });
+    } catch (e) {
+        // Silently handle ad blocker interference
+        console.info('Meta Pixel blocked by privacy tools - this is normal');
+    }
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=755496897174963&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Navigation -->
