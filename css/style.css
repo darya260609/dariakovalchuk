@@ -2366,6 +2366,46 @@ img {
         color: var(--text-light) !important;
     }
 
+    /* Pricing cards in courses */
+    .pricing-card {
+        background: var(--bg-light) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .pricing-card.featured {
+        border: 3px solid var(--primary-color) !important;
+        background: var(--bg-white) !important;
+    }
+    
+    .pricing-card h3 {
+        color: var(--primary-color) !important;
+    }
+    
+    .pricing-card .price {
+        color: var(--primary-color) !important;
+    }
+    
+    .pricing-card p[style*="color: var(--text-light)"],
+    .pricing-card p[style*="font-style: italic"],
+    .pricing-card p[data-i18n*="description"] {
+        color: #999999 !important;
+    }
+    
+    .feature-list li,
+    .module-list li {
+        color: var(--text-dark) !important;
+    }
+    
+    .buy-button {
+        background: var(--primary-color) !important;
+        color: var(--text-white) !important;
+    }
+    
+    .buy-button:hover {
+        background: #b8964d !important;
+    }
+
     /* Gallery */
     .gallery-overlay h4 {
         color: var(--text-white) !important;
