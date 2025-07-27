@@ -103,7 +103,17 @@ export const ukTexts = {
         form: {
             name: "Ваше Ім'я",
             email: "Ваш Email",
-            subject: "Тема",
+            phone: "Ваш Телефон",
+            service: {
+                select: "Оберіть послугу...",
+                brand: "Дизайн Бренду",
+                marketing: "Цифровий Маркетинг",
+                web: "Веб Розробка",
+                consulting: "Консультації",
+                automation: "Автоматизація",
+                courses: "Курси",
+                other: "Інше"
+            },
             message: "Ваше Повідомлення",
             submit: "Надіслати Повідомлення"
         }

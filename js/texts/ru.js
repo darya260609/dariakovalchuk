@@ -224,7 +224,17 @@ export const ruTexts = {
         form: {
             name: "Ваше Имя",
             email: "Ваш Email",
-            subject: "Тема",
+            phone: "Ваш Телефон",
+            service: {
+                select: "Выберите услугу...",
+                brand: "Дизайн Бренда",
+                marketing: "Цифровой Маркетинг",
+                web: "Веб Разработка",
+                consulting: "Консультации",
+                automation: "Автоматизация",
+                courses: "Курсы",
+                other: "Другое"
+            },
             message: "Ваше Сообщение",
             submit: "Отправить Сообщение"
         }

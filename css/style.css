@@ -8,6 +8,7 @@
     --bg-light: #fafafa;
     --bg-dark: #0a0a0a;
     --border-color: #e0e0e0;
+    --accent-luxury: #374151;
     --gradient-gold: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
     --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -98,7 +99,7 @@ img {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 0;
+    border-radius: 8px;
     transition: var(--transition);
     cursor: pointer;
     border: none;
@@ -731,6 +732,7 @@ img {
     background: var(--text-white);
     padding: 50px;
     box-shadow: var(--shadow-md);
+    border-radius: 12px;
 }
 
 .form-group {
@@ -746,6 +748,27 @@ img {
     font-family: inherit;
     font-size: 0.95rem;
     transition: var(--transition);
+    border-radius: 8px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid var(--border-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-group select {
+    background: var(--bg-light) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
 }
 
 .form-group input:focus,
@@ -753,6 +776,13 @@ img {
     outline: none;
     border-color: var(--primary-color);
     background: var(--text-white);
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--text-white) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a961' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center;
+    background-size: 16px;
 }
 
 .form-group textarea {
@@ -1605,7 +1635,7 @@ img {
 /* ===== PORTFOLIO SECTION ===== */
 .portfolio {
     padding: 100px 0;
-    background: var(--bg-light);
+    background: var(--bg-white);
 }
 
 .portfolio-grid {
@@ -1683,7 +1713,7 @@ img {
 /* ===== COURSES SECTION ===== */
 .courses {
     padding: 100px 0;
-    background: var(--bg-white);
+    background: var(--bg-light);
 }
 
 .courses-grid {
@@ -1981,6 +2011,14 @@ img {
         padding: 12px;
         font-size: 16px; /* Prevents zoom on iOS */
     }
+    
+    .form-group select {
+        padding: 12px;
+        padding-right: 40px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        background-size: 14px !important;
+        background-position: right 12px center !important;
+    }
 }
 
 /* ===== TOUCH OPTIMIZATION ===== */
@@ -1990,7 +2028,8 @@ img {
     .dropdown-item,
     .btn,
     .service-card,
-    .course-card {
+    .course-card,
+    .form-group select {
         min-height: 44px;
         touch-action: manipulation;
     }
@@ -2073,6 +2112,10 @@ img {
     .btn {
         border: 2px solid currentColor;
     }
+    
+    .form-group select {
+        border: 2px solid var(--text-dark);
+    }
 }
 
 /* ===== DARK MODE SUPPORT ===== */
@@ -2083,15 +2126,326 @@ img {
         --text-dark: #ffffff;
         --text-light: #cccccc;
         --border-color: #444444;
+        --text-white: #ffffff;
+        --secondary-color: #ffffff;
+        --accent-luxury: #7dd3fc;
+        --shadow-sm: 0 2px 10px rgba(255, 255, 255, 0.08);
+        --shadow-md: 0 5px 20px rgba(255, 255, 255, 0.1);
+        --shadow-lg: 0 10px 40px rgba(255, 255, 255, 0.15);
     }
 
-    .service-card,
-    .course-card {
-        background: var(--bg-light);
-        border: 1px solid var(--border-color);
+    /* Body and main backgrounds */
+    body {
+        background-color: var(--bg-white) !important;
+        color: var(--text-dark) !important;
+    }
+
+    /* Navigation */
+    .navbar {
+        background: rgba(26, 26, 26, 0.98) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .navbar.scrolled {
+        background: rgba(26, 26, 26, 0.95) !important;
+        box-shadow: 0 2px 20px rgba(255, 255, 255, 0.1) !important;
     }
 
     .nav-menu {
-        background: rgba(26, 26, 26, 0.98);
+        background: rgba(26, 26, 26, 0.98) !important;
+    }
+    
+    .nav-link {
+        color: var(--text-dark) !important;
+    }
+    
+    .logo {
+        color: var(--text-dark) !important;
+    }
+
+    /* Sections with light backgrounds */
+    .about,
+    .agency,
+    .contact {
+        background: var(--bg-light) !important;
+    }
+    
+    .portfolio {
+        background: var(--bg-white) !important;
+    }
+    
+    .services {
+        background: var(--bg-white) !important;
+    }
+    
+    .courses {
+        background: var(--bg-light) !important;
+    }
+
+    /* Cards */
+    .service-card,
+    .course-card {
+        background: var(--bg-light) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .service-card h3,
+    .course-card h3 {
+        color: var(--text-dark) !important;
+    }
+    
+    .service-card p,
+    .course-card p {
+        color: var(--text-light) !important;
+    }
+
+    /* Forms */
+    .contact-form {
+        background: var(--bg-light) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        background: var(--bg-white) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .form-group select {
+        background: var(--bg-white) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center !important;
+        background-size: 16px !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        background: var(--bg-white) !important;
+        border-color: var(--primary-color) !important;
+    }
+    
+    .form-group select:focus {
+        background: var(--bg-white) url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a961' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 15px center !important;
+        background-size: 16px !important;
+        border-color: var(--primary-color) !important;
+        outline: none !important;
+    }
+
+    /* Service icons and course icons */
+    .service-icon,
+    .course-icon {
+        background: var(--bg-white) !important;
+        color: var(--primary-color) !important;
+    }
+    
+    .service-card:hover .service-icon,
+    .course-card:hover .course-icon {
+        background: var(--gradient-gold) !important;
+        color: var(--text-white) !important;
+    }
+
+    /* About section */
+    .about-text h3,
+    .agency-text h3 {
+        color: var(--text-dark) !important;
+    }
+    
+    .about-text p,
+    .agency-text p {
+        color: var(--text-light) !important;
+    }
+    
+    .member-info h3 {
+        color: var(--text-dark) !important;
+    }
+
+    /* Stats */
+    .stat {
+        background: var(--bg-white) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+
+    /* Agency image */
+    .agency-image img {
+        border: 1px solid var(--border-color) !important;
+    }
+
+    /* Lightbox */
+    .lightbox {
+        background: rgba(0, 0, 0, 0.95) !important;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+        background: var(--bg-light) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .breadcrumb-item {
+        color: var(--text-light) !important;
+    }
+    
+    .breadcrumb-item.active {
+        color: var(--text-dark) !important;
+    }
+
+    /* Dropdown menus */
+    .dropdown-menu {
+        background: rgba(26, 26, 26, 0.98) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+    
+    .dropdown-item {
+        color: var(--text-dark) !important;
+    }
+    
+    .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: var(--primary-color) !important;
+    }
+
+    /* Language options */
+    .lang-option {
+        background: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+        border: 1px solid var(--border-color) !important;
+    }
+    
+    .lang-option:hover {
+        background: var(--bg-white) !important;
+        border-color: var(--primary-color) !important;
+    }
+    
+    .lang-option.active {
+        background: var(--primary-color) !important;
+        color: var(--text-white) !important;
+        border-color: var(--primary-color) !important;
+    }
+
+    /* Service detail pages */
+    .service-detail {
+        background: var(--bg-white) !important;
+    }
+    
+    .service-text h2,
+    .service-text h3 {
+        color: var(--text-dark) !important;
+    }
+    
+    .service-text p,
+    .service-text li {
+        color: var(--text-light) !important;
+    }
+
+    /* Course specific styles */
+    .course-hero {
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .course-content {
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%) !important;
+    }
+    
+    .course-section {
+        background: var(--bg-light) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-dark) !important;
+    }
+    
+    .course-section h2,
+    .course-section h3,
+    .course-section h4 {
+        color: var(--text-dark) !important;
+    }
+    
+    .course-section p,
+    .course-section li {
+        color: var(--text-light) !important;
+    }
+
+    /* Gallery */
+    .gallery-overlay h4 {
+        color: var(--text-white) !important;
+    }
+    
+    .portfolio-overlay h4 {
+        color: var(--text-white) !important;
+    }
+
+    /* Ensure text contrast */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--text-dark) !important;
+    }
+    
+    p {
+        color: var(--text-light) !important;
+    }
+
+    /* Override inline styles for course pages and similar content */
+    [style*="background: white"],
+    [style*="background:white"],
+    [style*="background-color: white"],
+    [style*="background-color:white"],
+    [style*="background: #fff"],
+    [style*="background:#fff"],
+    [style*="background-color: #fff"],
+    [style*="background-color:#fff"],
+    [style*="background: #ffffff"],
+    [style*="background:#ffffff"],
+    [style*="background-color: #ffffff"],
+    [style*="background-color:#ffffff"] {
+        background: var(--bg-light) !important;
+    }
+
+    [style*="color: black"],
+    [style*="color:black"],
+    [style*="color: #000"],
+    [style*="color:#000"],
+    [style*="color: #000000"],
+    [style*="color:#000000"] {
+        color: var(--text-dark) !important;
+    }
+
+    /* Course page specific overrides */
+    .course-hero[style],
+    .course-content[style],
+    .course-section[style] {
+        background: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+    }
+
+    /* Any element with light background gradient */
+    [style*="linear-gradient"][style*="#f8f9fa"],
+    [style*="linear-gradient"][style*="#f1f3f4"] {
+        background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%) !important;
+    }
+}
+
+/* ===== ADDITIONAL iOS DARK MODE SUPPORT ===== */
+@supports (-webkit-appearance: none) {
+    @media (prefers-color-scheme: dark) {
+        /* Specific iOS/WebKit support */
+        html {
+            color-scheme: dark;
+        }
+        
+        body {
+            -webkit-appearance: none;
+        }
+        
+        /* Ensure forms work properly in iOS dark mode */
+        input, textarea, select {
+            color-scheme: dark;
+        }
+        
+        /* Fix for iOS Safari specific issues */
+        .navbar,
+        .nav-menu,
+        .dropdown-menu {
+            -webkit-backdrop-filter: blur(15px);
+        }
     }
 } 

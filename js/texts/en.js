@@ -224,7 +224,17 @@ export const enTexts = {
         form: {
             name: "Your Name",
             email: "Your Email",
-            subject: "Subject",
+            phone: "Your Phone",
+            service: {
+                select: "Select service...",
+                brand: "Brand Design",
+                marketing: "Digital Marketing",
+                web: "Web Development",
+                consulting: "Consulting",
+                automation: "Automation",
+                courses: "Courses",
+                other: "Other"
+            },
             message: "Your Message",
             submit: "Send Message"
         }

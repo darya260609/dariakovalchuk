@@ -224,7 +224,17 @@ export const csTexts = {
         form: {
             name: "Vaše Jméno",
             email: "Váš Email",
-            subject: "Předmět",
+            phone: "Váš Telefon",
+            service: {
+                select: "Vyberte službu...",
+                brand: "Design Značky",
+                marketing: "Digitální Marketing",
+                web: "Webový Vývoj",
+                consulting: "Konzultace",
+                automation: "Automatizace",
+                courses: "Kurzy",
+                other: "Jiné"
+            },
             message: "Vaše Zpráva",
             submit: "Odeslat Zprávu"
         }

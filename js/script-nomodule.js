@@ -208,7 +208,17 @@ const translations = {
             form: {
                 name: "Your Name",
                 email: "Your Email",
-                subject: "Subject",
+                phone: "Your Phone",
+                service: {
+                    select: "Select service...",
+                    brand: "Brand Design",
+                    marketing: "Digital Marketing",
+                    web: "Web Development",
+                    consulting: "Consulting",
+                    automation: "Automation",
+                    courses: "Courses",
+                    other: "Other"
+                },
                 message: "Your Message",
                 submit: "Send Message"
             }
@@ -431,7 +441,17 @@ const translations = {
             form: {
                 name: "Vaše jméno",
                 email: "Váš email",
-                subject: "Předmět",
+                phone: "Váš telefon",
+                service: {
+                    select: "Vyberte službu...",
+                    brand: "Design Značky",
+                    marketing: "Digitální Marketing",
+                    web: "Webový Vývoj",
+                    consulting: "Konzultace",
+                    automation: "Automatizace",
+                    courses: "Kurzy",
+                    other: "Jiné"
+                },
                 message: "Vaše zpráva",
                 submit: "Odeslat zprávu"
             }
@@ -649,7 +669,17 @@ const translations = {
             form: {
                 name: "Ваше имя",
                 email: "Ваш email",
-                subject: "Тема",
+                phone: "Ваш телефон",
+                service: {
+                    select: "Выберите услугу...",
+                    brand: "Дизайн Бренда",
+                    marketing: "Цифровой Маркетинг",
+                    web: "Веб Разработка",
+                    consulting: "Консультации",
+                    automation: "Автоматизация",
+                    courses: "Курсы",
+                    other: "Другое"
+                },
                 message: "Ваше сообщение",
                 submit: "Отправить сообщение"
             }
@@ -857,7 +887,17 @@ const translations = {
             form: {
                 name: "Ваше ім'я",
                 email: "Ваш email",
-                subject: "Тема",
+                phone: "Ваш телефон",
+                service: {
+                    select: "Оберіть послугу...",
+                    brand: "Дизайн Бренду",
+                    marketing: "Цифровий Маркетинг",
+                    web: "Веб Розробка",
+                    consulting: "Консультації",
+                    automation: "Автоматизація",
+                    courses: "Курси",
+                    other: "Інше"
+                },
                 message: "Ваше повідомлення",
                 submit: "Надіслати повідомлення"
             }

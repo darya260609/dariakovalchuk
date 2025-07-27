@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Target Vision - Luxury Digital Solutions</title>
     <meta name="description" content="Premium digital solutions and creative agency services by Target Vision">
     
@@ -318,7 +319,19 @@
                         <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.form.email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
+                        <input type="tel" placeholder="Your Phone" data-i18n-placeholder="contact.form.phone">
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="" disabled selected data-i18n="contact.form.service.select">Vyberte službu...</option>
+                            <option value="brand-design" data-i18n="contact.form.service.brand">Design Značky</option>
+                            <option value="digital-marketing" data-i18n="contact.form.service.marketing">Digitální Marketing</option>
+                            <option value="web-development" data-i18n="contact.form.service.web">Webový Vývoj</option>
+                            <option value="consulting" data-i18n="contact.form.service.consulting">Konzultace</option>
+                            <option value="automation" data-i18n="contact.form.service.automation">Automatizace</option>
+                            <option value="courses" data-i18n="contact.form.service.courses">Kurzy</option>
+                            <option value="other" data-i18n="contact.form.service.other">Jiné</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <textarea placeholder="Your Message" data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
