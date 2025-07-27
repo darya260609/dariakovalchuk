@@ -353,6 +353,23 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
                     </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text" data-i18n="contact.form.newsletter">Mám zájem o novinky a aktuální informace</span>
+                        </label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                <span data-i18n="contact.form.privacy">Souhlasím se zpracováním osobních údajů podle</span>
+                                <a href="#" onclick="openPrivacyPolicy()" class="privacy-link" data-i18n="contact.form.privacyLink">zásad ochrany osobních údajů</a> *
+                            </span>
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
                 </form>
             </div>
@@ -379,6 +396,32 @@
         </div>
     </div>
 
+    <!-- Privacy Policy Modal -->
+    <div class="success-modal" id="privacyModal">
+        <div class="modal-content privacy-modal-content">
+            <h3 class="modal-title" data-i18n="privacy.title">Zásady ochrany osobních údajů</h3>
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <h4 data-i18n="privacy.contact.title">Kontaktní formulář</h4>
+                    <p data-i18n="privacy.contact.text">Vaše osobní údaje (jméno, email, telefon, zpráva) používáme výhradně pro zodpovězení vaší poptávky a poskytnutí našich služeb. Údaje nejsou předávány třetím stranám.</p>
+                </div>
+                <div class="privacy-section">
+                    <h4 data-i18n="privacy.newsletter.title">Newsletter</h4>
+                    <p data-i18n="privacy.newsletter.text">Pokud souhlasíte s odběrem novinek, váš email bude použit pro zasílání informací o našich službách. Odhlásit se můžete kdykoli.</p>
+                </div>
+                <div class="privacy-section">
+                    <h4 data-i18n="privacy.rights.title">Vaše práva</h4>
+                    <p data-i18n="privacy.rights.text">Máte právo na přístup ke svým údajům, jejich opravu, výmaz nebo omezení zpracování. Kontaktujte nás pro uplatnění svých práv.</p>
+                </div>
+                <div class="privacy-section">
+                    <h4 data-i18n="privacy.contact_info.title">Kontakt</h4>
+                    <p data-i18n="privacy.contact_info.text">Správce údajů: Target Vision<br>Email: info@targetvision.cz</p>
+                </div>
+            </div>
+            <button class="modal-close" onclick="closePrivacyModal()" data-i18n="modal.close">Rozumím</button>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script-nomodule.js"></script>
@@ -397,9 +440,83 @@
             const service = serviceSelect.selectedOptions[0] ? serviceSelect.selectedOptions[0].text : 'Nevybráno';
             const message = this.querySelector('textarea[data-i18n-placeholder="contact.form.message"]').value;
             
-            // Basic validation
-            if (!name || !email || !message || serviceSelect.value === '') {
-                alert('Prosím vyplňte všechna povinná pole.');
+            // Get checkbox values
+            const newsletterCheckbox = this.querySelector('input[name="newsletter"]');
+            const privacyCheckbox = this.querySelector('input[name="privacy"]');
+            const newsletter = newsletterCheckbox.checked;
+            const privacy = privacyCheckbox.checked;
+            
+            // Complete validation with visual indication
+            const nameField = this.querySelector('input[data-i18n-placeholder="contact.form.name"]');
+            const emailField = this.querySelector('input[data-i18n-placeholder="contact.form.email"]');
+            const messageField = this.querySelector('textarea[data-i18n-placeholder="contact.form.message"]');
+            
+            // Clear previous error states
+            document.querySelectorAll('.form-group.error, .checkbox-label.error').forEach(element => {
+                element.classList.remove('error');
+            });
+            
+            let hasErrors = false;
+            let firstErrorField = null;
+            let errorType = '';
+            
+            // Check all required fields
+            if (!name) {
+                nameField.closest('.form-group').classList.add('error');
+                if (!firstErrorField) {
+                    firstErrorField = nameField;
+                    errorType = 'required';
+                }
+                hasErrors = true;
+            }
+            if (!email) {
+                emailField.closest('.form-group').classList.add('error');
+                if (!firstErrorField) {
+                    firstErrorField = emailField;
+                    errorType = 'required';
+                }
+                hasErrors = true;
+            }
+            if (!message) {
+                messageField.closest('.form-group').classList.add('error');
+                if (!firstErrorField) {
+                    firstErrorField = messageField;
+                    errorType = 'required';
+                }
+                hasErrors = true;
+            }
+            if (serviceSelect.value === '') {
+                serviceSelect.closest('.form-group').classList.add('error');
+                if (!firstErrorField) {
+                    firstErrorField = serviceSelect;
+                    errorType = 'required';
+                }
+                hasErrors = true;
+            }
+            
+            // Check GDPR checkbox (always check, regardless of other errors)
+            if (!privacy) {
+                const privacyLabel = privacyCheckbox.closest('.checkbox-label');
+                privacyLabel.classList.add('error');
+                if (!firstErrorField) {
+                    firstErrorField = privacyLabel;
+                    errorType = 'privacy';
+                }
+                hasErrors = true;
+            }
+            
+            // If any errors, show feedback
+            if (hasErrors) {
+                // Scroll to first error field
+                firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Remove error styling after 5 seconds
+                setTimeout(() => {
+                    document.querySelectorAll('.form-group.error, .checkbox-label.error').forEach(element => {
+                        element.classList.remove('error');
+                    });
+                }, 5000);
+                
                 return;
             }
             
@@ -415,6 +532,11 @@
             
             telegramMessage += `🔧 *Služba:* ${service}\n`;
             telegramMessage += `💬 *Zpráva:* ${message}\n\n`;
+            
+            // Add checkbox information
+            telegramMessage += `📰 *Novinky:* ${newsletter ? 'Ano' : 'Ne'}\n`;
+            telegramMessage += `✅ *Souhlas GDPR:* Ano\n\n`;
+            
             telegramMessage += `⏰ *Čas:* ${new Date().toLocaleString('cs-CZ')}`;
             
             // Send to Telegram Bot
@@ -468,6 +590,11 @@
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
             } catch (error) {
+                // Suppress browser extension interference errors
+                if (error.message && error.message.includes('message port closed')) {
+                    console.warn('Browser extension interference detected - this does not affect functionality');
+                    return;
+                }
                 console.error('Error sending to Telegram:', error);
                 
                 // Remove loading state
@@ -507,10 +634,54 @@
             modal.classList.remove('show');
         }
         
-        // Close modal when clicking outside
+        function openPrivacyPolicy() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.add('show');
+        }
+        
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.remove('show');
+        }
+        
+        // Auto-remove error styling when user interacts with form fields
+        document.addEventListener('DOMContentLoaded', function() {
+            // Privacy checkbox
+            const privacyCheckbox = document.querySelector('input[name="privacy"]');
+            if (privacyCheckbox) {
+                privacyCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        const privacyLabel = this.closest('.checkbox-label');
+                        privacyLabel.classList.remove('error');
+                    }
+                });
+            }
+            
+            // Form fields - remove error on input/change
+            const formFields = document.querySelectorAll('#contactForm input, #contactForm textarea, #contactForm select');
+            formFields.forEach(field => {
+                const events = field.tagName === 'SELECT' ? ['change'] : ['input', 'change'];
+                events.forEach(eventType => {
+                    field.addEventListener(eventType, function() {
+                        const formGroup = this.closest('.form-group');
+                        if (formGroup && formGroup.classList.contains('error')) {
+                            formGroup.classList.remove('error');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Close modals when clicking outside
         document.getElementById('successModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeSuccessModal();
+            }
+        });
+        
+        document.getElementById('privacyModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePrivacyModal();
             }
         });
     </script>

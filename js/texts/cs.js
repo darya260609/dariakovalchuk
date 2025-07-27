@@ -237,7 +237,33 @@ export const csTexts = {
                 other: "Jiné"
             },
             message: "Vaše Zpráva",
+            newsletter: "Mám zájem o novinky a aktuální informace",
+            privacy: "Souhlasím se zpracováním osobních údajů podle",
+            privacyLink: "zásad ochrany osobních údajů",
             submit: "Odeslat Zprávu"
+        }
+    },
+    validation: {
+        required: "Prosím vyplňte všechna povinná pole.",
+        privacy: "Musíte souhlasit se zpracováním osobních údajů."
+    },
+    privacy: {
+        title: "Zásady ochrany osobních údajů",
+        contact: {
+            title: "Kontaktní formulář",
+            text: "Vaše osobní údaje (jméno, email, telefon, zpráva) používáme výhradně pro zodpovězení vaší poptávky a poskytnutí našich služeb. Údaje nejsou předávány třetím stranám."
+        },
+        newsletter: {
+            title: "Newsletter",
+            text: "Pokud souhlasíte s odběrem novinek, váš email bude použit pro zasílání informací o našich službách. Odhlásit se můžete kdykoli."
+        },
+        rights: {
+            title: "Vaše práva",
+            text: "Máte právo na přístup ke svým údajům, jejich opravu, výmaz nebo omezení zpracování. Kontaktujte nás pro uplatnění svých práv."
+        },
+        contact_info: {
+            title: "Kontakt",
+            text: "Správce údajů: Target Vision<br>Email: info@targetvision.cz"
         }
     },
     modal: {

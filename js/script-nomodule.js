@@ -221,8 +221,15 @@ const translations = {
                     other: "Other"
                 },
                 message: "Your Message",
+                newsletter: "I'm interested in news and updates",
+                privacy: "I agree to the processing of personal data according to",
+                privacyLink: "privacy policy",
                 submit: "Send Message"
             }
+        },
+        validation: {
+            required: "Please fill in all required fields.",
+            privacy: "You must agree to the processing of personal data."
         },
         modal: {
             title: "Thank you for your message!",
@@ -460,8 +467,15 @@ const translations = {
                     other: "Jiné"
                 },
                 message: "Vaše zpráva",
+                newsletter: "Mám zájem o novinky a aktuální informace",
+                privacy: "Souhlasím se zpracováním osobních údajů podle",
+                privacyLink: "zásad ochrany osobních údajů",
                 submit: "Odeslat zprávu"
             }
+        },
+        validation: {
+            required: "Prosím vyplňte všechna povinná pole.",
+            privacy: "Musíte souhlasit se zpracováním osobních údajů."
         },
         modal: {
             title: "Děkujeme za vaši zprávu!",
@@ -694,8 +708,15 @@ const translations = {
                     other: "Другое"
                 },
                 message: "Ваше сообщение",
+                newsletter: "Я заинтересован в новостях и обновлениях",
+                privacy: "Я согласен на обработку персональных данных согласно",
+                privacyLink: "политике конфиденциальности",
                 submit: "Отправить сообщение"
             }
+        },
+        validation: {
+            required: "Пожалуйста, заполните все обязательные поля.",
+            privacy: "Вы должны согласиться на обработку персональных данных."
         },
         modal: {
             title: "Спасибо за ваше сообщение!",
@@ -918,8 +939,15 @@ const translations = {
                     other: "Інше"
                 },
                 message: "Ваше повідомлення",
+                newsletter: "Я зацікавлений у новинах та оновленнях",
+                privacy: "Я погоджуюся на обробку персональних даних згідно з",
+                privacyLink: "політикою конфіденційності",
                 submit: "Надіслати повідомлення"
             }
+        },
+        validation: {
+            required: "Будь ласка, заповніть всі обов'язкові поля.",
+            privacy: "Ви повинні погодитися на обробку персональних даних."
         },
         modal: {
             title: "Дякуємо за ваше повідомлення!",

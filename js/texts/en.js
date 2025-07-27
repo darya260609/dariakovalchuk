@@ -237,7 +237,33 @@ export const enTexts = {
                 other: "Other"
             },
             message: "Your Message",
+            newsletter: "I'm interested in news and updates",
+            privacy: "I agree to the processing of personal data according to",
+            privacyLink: "privacy policy",
             submit: "Send Message"
+        }
+    },
+    validation: {
+        required: "Please fill in all required fields.",
+        privacy: "You must agree to the processing of personal data."
+    },
+    privacy: {
+        title: "Privacy Policy",
+        contact: {
+            title: "Contact Form",
+            text: "Your personal data (name, email, phone, message) is used exclusively to respond to your inquiry and provide our services. Data is not shared with third parties."
+        },
+        newsletter: {
+            title: "Newsletter",
+            text: "If you agree to receive newsletters, your email will be used to send information about our services. You can unsubscribe at any time."
+        },
+        rights: {
+            title: "Your Rights",
+            text: "You have the right to access your data, correct it, delete it, or limit its processing. Contact us to exercise your rights."
+        },
+        contact_info: {
+            title: "Contact",
+            text: "Data Controller: Target Vision<br>Email: info@targetvision.cz"
         }
     },
     modal: {
