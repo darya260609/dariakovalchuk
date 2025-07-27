@@ -1210,8 +1210,8 @@ function setLanguage(lang) {
             'uk': 'UK'
         };
         
-        if (flagIcon) flagIcon.textContent = flags[lang] || '🇺🇸';
-        if (langText) langText.textContent = texts[lang] || 'EN';
+        if (flagIcon) flagIcon.textContent = flags[lang] || '🇨🇿';
+        if (langText) langText.textContent = texts[lang] || 'CS';
         
         // Update active state of toggle button
         langToggle.classList.remove('active');
@@ -1288,9 +1288,9 @@ function initializeLanguageSystem() {
     // Get saved language
     let savedLang;
     try {
-        savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        savedLang = localStorage.getItem('preferredLanguage') || 'cs';
     } catch (e) {
-        savedLang = 'en'; // Fallback if localStorage is not available
+        savedLang = 'cs'; // Fallback if localStorage is not available
     }
 
     console.log('Saved language:', savedLang);
