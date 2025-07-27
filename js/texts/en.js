@@ -222,9 +222,10 @@ export const enTexts = {
         title: "Get In Touch",
         subtitle: "Let's create something extraordinary together",
         form: {
+            title: "Contact Us",
             name: "Your Name",
             email: "Your Email",
-            phone: "Your Phone",
+            phone: "Phone number",
             service: {
                 select: "Select service...",
                 brand: "Brand Design",
@@ -238,6 +239,11 @@ export const enTexts = {
             message: "Your Message",
             submit: "Send Message"
         }
+    },
+    modal: {
+        title: "Thank you for your message!",
+        message: "Your inquiry has been successfully sent. We will get back to you within 24 hours with answers to your questions.",
+        close: "Understood"
     },
     footer: {
         rights: "© 2024 Target Vision. All rights reserved",

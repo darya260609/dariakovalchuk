@@ -206,9 +206,10 @@ const translations = {
             title: "Get In Touch",
             subtitle: "Let's create something extraordinary together",
             form: {
+                title: "Contact Us",
                 name: "Your Name",
                 email: "Your Email",
-                phone: "Your Phone",
+                phone: "Phone number",
                 service: {
                     select: "Select service...",
                     brand: "Brand Design",
@@ -222,6 +223,11 @@ const translations = {
                 message: "Your Message",
                 submit: "Send Message"
             }
+        },
+        modal: {
+            title: "Thank you for your message!",
+            message: "Your inquiry has been successfully sent. We will get back to you within 24 hours with answers to your questions.",
+            close: "Understood"
         },
         footer: {
             rights: "© 2024 Target Vision. All rights reserved.",
@@ -439,9 +445,10 @@ const translations = {
             title: "Kontakt",
             subtitle: "Vytvořme něco mimořádného společně",
             form: {
+                title: "Kontaktujte nás",
                 name: "Vaše jméno",
                 email: "Váš email",
-                phone: "Váš telefon",
+                phone: "Telefonní číslo",
                 service: {
                     select: "Vyberte službu...",
                     brand: "Design Značky",
@@ -455,6 +462,11 @@ const translations = {
                 message: "Vaše zpráva",
                 submit: "Odeslat zprávu"
             }
+        },
+        modal: {
+            title: "Děkujeme za vaši zprávu!",
+            message: "Vaše poptávka byla úspěšně odeslána. Ozveme se vám do 24 hodin s odpovědí na vaše dotazy.",
+            close: "Rozumím"
         },
         footer: {
             rights: "© 2024 Target Vision. Všechna práva vyhrazena.",
@@ -667,9 +679,10 @@ const translations = {
             title: "Связаться",
             subtitle: "Давайте создадим что-то необыкновенное вместе",
             form: {
+                title: "Свяжитесь с нами",
                 name: "Ваше имя",
                 email: "Ваш email",
-                phone: "Ваш телефон",
+                phone: "Номер телефона",
                 service: {
                     select: "Выберите услугу...",
                     brand: "Дизайн Бренда",
@@ -683,6 +696,11 @@ const translations = {
                 message: "Ваше сообщение",
                 submit: "Отправить сообщение"
             }
+        },
+        modal: {
+            title: "Спасибо за ваше сообщение!",
+            message: "Ваш запрос был успешно отправлен. Мы свяжемся с вами в течение 24 часов с ответами на ваши вопросы.",
+            close: "Понятно"
         },
         footer: {
             rights: "© 2024 Target Vision. Все права защищены.",
@@ -885,9 +903,10 @@ const translations = {
             title: "Зв'язатися",
             subtitle: "Давайте створимо щось надзвичайне разом",
             form: {
+                title: "Зв'яжіться з нами",
                 name: "Ваше ім'я",
                 email: "Ваш email",
-                phone: "Ваш телефон",
+                phone: "Номер телефону",
                 service: {
                     select: "Оберіть послугу...",
                     brand: "Дизайн Бренду",
@@ -901,6 +920,11 @@ const translations = {
                 message: "Ваше повідомлення",
                 submit: "Надіслати повідомлення"
             }
+        },
+        modal: {
+            title: "Дякуємо за ваше повідомлення!",
+            message: "Ваш запит було успішно надіслано. Ми зв'яжемося з вами протягом 24 годин з відповідями на ваші питання.",
+            close: "Зрозуміло"
         },
         footer: {
             rights: "© 2024 Daria Kovalchuk. Всі права захищені.",

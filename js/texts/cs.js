@@ -222,9 +222,10 @@ export const csTexts = {
         title: "Kontaktujte Nás",
         subtitle: "Vytvořme něco mimořádného společně",
         form: {
+            title: "Kontaktujte nás",
             name: "Vaše Jméno",
             email: "Váš Email",
-            phone: "Váš Telefon",
+            phone: "Telefonní číslo",
             service: {
                 select: "Vyberte službu...",
                 brand: "Design Značky",
@@ -238,6 +239,11 @@ export const csTexts = {
             message: "Vaše Zpráva",
             submit: "Odeslat Zprávu"
         }
+    },
+    modal: {
+        title: "Děkujeme za vaši zprávu!",
+        message: "Vaše poptávka byla úspěšně odeslána. Ozveme se vám do 24 hodin s odpovědí na vaše dotazy.",
+        close: "Rozumím"
     },
     footer: {
         rights: "© 2024 Target Vision. Všechna práva vyhrazena",
