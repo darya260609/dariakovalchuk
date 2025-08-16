@@ -197,6 +197,19 @@ img {
     color: var(--primary-color);
 }
 
+/* Keep logo in a single line across locales and prevent shrink */
+.logo {
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+/* Optically align the dot and keep a small gap from the wordmark */
+.logo::after {
+    position: relative;
+    top: -0.08em;
+    margin-left: 2px;
+}
+
 .nav-menu {
     display: flex;
     align-items: flex-end; /* align links with logo baseline */
@@ -206,6 +219,8 @@ img {
     padding: 0;
     height: calc(var(--header-height-desktop) - 10px);
     position: relative;
+    flex-wrap: nowrap;
+    margin-left: clamp(24px, 4vw, 48px); /* constant gap from logo across locales */
 }
 
 .nav-link {
