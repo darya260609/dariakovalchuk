@@ -252,11 +252,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Primary">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="../index.html" class="logo">Target Vision</a>
-                <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="logo" aria-label="Target Vision home">Target Vision</a>
+                <div class="nav-menu" id="navMenu" aria-hidden="true">
                     <a href="../index.html" class="nav-link" data-i18n="nav.home">Domů</a>
                     <a href="../index.html#about" class="nav-link" data-i18n="nav.about">O nás</a>
                     <a href="../index.html#services" class="nav-link" data-i18n="nav.services">Služby</a>
@@ -290,11 +290,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="hamburger" id="hamburger">
+                <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </div>
     </nav>

@@ -1046,34 +1046,60 @@ AOS.init({
     disable: 'mobile'
 });
 
-// Navbar scroll effect
+// Navbar scroll effect + sticky shadow toggle
 const navbar = document.getElementById('navbar');
-const scrollThreshold = 100;
+const scrollThreshold = 8;
 
-window.addEventListener('scroll', () => {
+function updateHeaderOnScroll() {
+    if (!navbar) return;
     if (window.scrollY > scrollThreshold) {
-        navbar.classList.add('scrolled');
+        navbar.classList.add('is-scrolled');
     } else {
-        navbar.classList.remove('scrolled');
+        navbar.classList.remove('is-scrolled');
     }
-});
+}
 
-// Mobile menu toggle
+window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+updateHeaderOnScroll();
+
+// Mobile menu toggle with ARIA + ESC support
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+function openMobileMenu() {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.add('active');
+    navMenu.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    hamburger.setAttribute('aria-expanded', 'true');
+    navMenu.setAttribute('aria-hidden', 'false');
+}
+
+function closeMobileMenu() {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-hidden', 'true');
+}
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('active');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+}
 
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        
+        closeMobileMenu();
         // Add touch feedback for mobile
         if ('ontouchstart' in window) {
             link.style.transform = 'scale(0.95)';
@@ -1252,9 +1278,15 @@ lightbox.addEventListener('click', (e) => {
 
 // Escape key to close lightbox
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
+    if (e.key === 'Escape') {
+        if (lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        // Also close mobile menu on ESC
+        if (navMenu && navMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
     }
 });
 
