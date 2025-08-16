@@ -1,0 +1,36 @@
+{
+  "references": [
+    {
+      "brandCode": "GF",
+      "brandName": "Golden Flowers",
+      "avatar": "images/flower.jpg",
+      "stars": 2,
+      "text": "Spolupráce předčila očekávání. Výsledky přišly rychle a v luxusní prezentaci, která přesně sedí naší značce.",
+      "author": "Monika V., CEO"
+    },
+    {
+      "brandCode": "LM",
+      "brandName": "Luminous Med Spa",
+      "avatar": "images/divadlo.jpg",
+      "stars": 1,
+      "text": "Precizní strategie i provedení. Elegantní komunikace, jasná čísla a růst, který je vidět.",
+      "author": "Daniel K., Founder"
+    },
+    {
+      "brandCode": "HB",
+      "brandName": "Hausberg Living",
+      "avatar": "images/divadlo_2.jpg",
+      "stars": 1,
+      "text": "Skvělé pochopení značky. Každý detail je dotažený a výsledek působí výjimečně profesionálně.",
+      "author": "Tereza N., Marketing Lead"
+    },
+    {
+      "brandCode": "OR",
+      "brandName": "Orion Real Estate",
+      "avatar": "images/podolog.jpg",
+      "stars": 1,
+      "text": "Luxusní vizuál i výkon. Přivedlo nám to nové klienty v prémiovém segmentu.",
+      "author": "Petr H., Partner"
+    }
+  ]
+}

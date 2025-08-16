@@ -199,12 +199,13 @@ export const ruTexts = {
         }
     },
     portfolio: {
-        title: "Портфолио",
-        subtitle: "Витрина наших лучших проектов"
+        title: "Референсы",
+        subtitle: "Что говорят наши клиенты"
     },
     courses: {
         title: "Курсы",
         subtitle: "Профессиональное образование для вашего успеха",
+        languageIndicator: "Доступно",
         course1: {
             title: "Target Vision",
             description: "Полный курс таргетированной рекламы для начинающих"

@@ -16,7 +16,7 @@ const translations = {
             coursesItems: {
                 course1: "Target Vision"
             },
-            portfolio: "Portfolio",
+            portfolio: "References",
             contact: "Contact",
             language: "Language"
         },
@@ -192,6 +192,7 @@ const translations = {
         courses: {
             title: "Courses",
             subtitle: "Professional education for your success",
+            languageIndicator: "Only in Russian",
             course1: {
                 title: "Targeting - Level 1",
                 subtitle: "Complete targeted advertising course",
@@ -199,8 +200,8 @@ const translations = {
             }
         },
         portfolio: {
-            title: "Portfolio",
-            subtitle: "Showcase of our best projects"
+            title: "References",
+            subtitle: "What our clients say"
         },
         contact: {
             title: "Get In Touch",
@@ -276,7 +277,7 @@ const translations = {
             coursesItems: {
                 course1: "Target Vision"
             },
-            portfolio: "Výsledky práce",
+            portfolio: "Reference",
             contact: "Kontakt",
             language: "Jazyk"
         },
@@ -457,6 +458,7 @@ const translations = {
         courses: {
             title: "Kurzy",
             subtitle: "Profesionální vzdělávání pro váš úspěch",
+            languageIndicator: "Pouze v ruském jazyce",
             course1: {
                 title: "Targeting - Level 1",
                 subtitle: "Kompletní kurz targetované reklamy",
@@ -464,8 +466,8 @@ const translations = {
             }
         },
         portfolio: {
-            title: "Výsledky práce",
-            subtitle: "Ukázky našich nejlepších projektů"
+            title: "Reference",
+            subtitle: "Co říkají naši klienti"
         },
         contact: {
             title: "Kontakt",
@@ -541,7 +543,7 @@ const translations = {
             coursesItems: {
                 course1: "Target Vision"
             },
-            portfolio: "Портфолио",
+            portfolio: "Отзывы",
             contact: "Контакты",
             language: "Язык"
         },
@@ -717,6 +719,7 @@ const translations = {
         courses: {
             title: "Курсы",
             subtitle: "Профессиональное образование для вашего успеха",
+            languageIndicator: "Доступно",
             course1: {
                 title: "Targeting - Level 1",
                 subtitle: "Полный курс таргетированной рекламы",
@@ -724,8 +727,8 @@ const translations = {
             }
         },
         portfolio: {
-            title: "Портфолио",
-            subtitle: "Демонстрация наших лучших проектов"
+            title: "Отзывы",
+            subtitle: "Что говорят наши клиенты"
         },
         contact: {
             title: "Связаться",
@@ -801,7 +804,7 @@ const translations = {
             coursesItems: {
                 course1: "Target Vision"
             },
-            portfolio: "Портфоліо",
+            portfolio: "Відгуки",
             contact: "Контакти",
             language: "Мова"
         },
@@ -967,6 +970,7 @@ const translations = {
         courses: {
             title: "Курси",
             subtitle: "Професійна освіта для вашого успіху",
+            languageIndicator: "Доступно",
             course1: {
                 title: "Targeting - Level 1",
                 subtitle: "Повний курс таргетованої реклами",
@@ -974,8 +978,8 @@ const translations = {
             }
         },
         portfolio: {
-            title: "Портфоліо",
-            subtitle: "Демонстрація наших найкращих проектів"
+            title: "Відгуки",
+            subtitle: "Що кажуть наші клієнти"
         },
         contact: {
             title: "Зв'язатися",
@@ -1433,12 +1437,66 @@ function setLanguage(lang) {
         element.placeholder = value;
     });
 
+    // Update course card states based on selected language
+    updateCourseCardStates(lang);
+
     // Save language preference
     try {
         localStorage.setItem('preferredLanguage', lang);
     } catch (e) {
         console.warn('Could not save language preference to localStorage');
     }
+}
+
+// Update course card visual/interactive states per language
+function updateCourseCardStates(lang) {
+    const courseCards = document.querySelectorAll('.course-card');
+    courseCards.forEach(card => {
+        card.classList.remove('disabled', 'available');
+        card.removeEventListener('click', handleDisabledCourseClick);
+
+        if (lang === 'cs' || lang === 'en') {
+            card.classList.add('disabled');
+            card.addEventListener('click', handleDisabledCourseClick);
+        } else {
+            card.classList.add('available');
+        }
+    });
+}
+
+// Prevent navigation and show notice for unavailable courses (CS/EN)
+function handleDisabledCourseClick(e) {
+    e.preventDefault();
+    let currentLang = 'cs';
+    try {
+        currentLang = localStorage.getItem('preferredLanguage') || 'cs';
+    } catch (e2) { /* noop */ }
+    showCourseUnavailableMessage(currentLang);
+}
+
+function showCourseUnavailableMessage(lang) {
+    const existing = document.querySelector('.course-notice-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'course-notice-toast';
+    toast.style.cssText = `
+        position: fixed; top: 20px; right: 20px; z-index: 10000; color: #fff;
+        padding: 12px 18px; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,.15);
+        background: linear-gradient(135deg, #c9a961 0%, #d4af37 100%);
+        transform: translateX(120%); transition: transform .3s ease; font-weight: 600; font-size: 14px;`;
+
+    const text = (lang === 'cs')
+        ? 'Kurzy jsou dostupné pouze v ruštině a ukrajinštině'
+        : 'Courses are available only in Russian and Ukrainian';
+    toast.textContent = text;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => { toast.style.transform = 'translateX(0)'; });
+    setTimeout(() => {
+        toast.style.transform = 'translateX(120%)';
+        setTimeout(() => toast.remove(), 300);
+    }, 2800);
 }
 
 // Initialize language and event handlers
@@ -1457,6 +1515,7 @@ function initializeLanguageSystem() {
 
     // Set initial language
     setLanguage(savedLang);
+    updateCourseCardStates(savedLang);
 
     // Add click handlers for language buttons (legacy)
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1501,13 +1560,47 @@ function initializeLanguageSystem() {
     }
 }
 
+// Render references from JSON into the carousel
+async function renderReferences() {
+    const track = document.querySelector('.references-track');
+    if (!track) return;
+
+    try {
+        const res = await fetch('js/references.json', { cache: 'no-store' });
+        const data = await res.json();
+        const refs = data.references || [];
+
+        const createCard = (ref) => {
+            const stars = Array.from({ length: ref.stars || 5 }).map(() => '<i class="fa-solid fa-star"></i>').join('');
+            return `
+                <div class="reference-card">
+                    <div class="reference-brand">
+                        <span class="brand-badge">${ref.avatar ? `<img src="${ref.avatar}" alt="${ref.brandName}">` : (ref.brandCode || '')}</span>
+                        <span class="brand-name">${ref.brandName || ''}</span>
+                    </div>
+                    <div class="reference-rating" aria-label="${ref.stars || 5} out of 5 stars">${stars}</div>
+                    <p class="reference-text">${ref.text || ''}</p>
+                    <div class="reference-author">— ${ref.author || ''}</div>
+                </div>`;
+        };
+
+        // Build two sets for seamless loop
+        const htmlA = refs.map(createCard).join('');
+        const htmlB = refs.map(createCard).join('');
+        track.innerHTML = htmlA + htmlB;
+    } catch (e) {
+        console.warn('Failed to load references.json', e);
+    }
+}
+
 // Initialize immediately if DOM is ready
 console.log('Document ready state:', document.readyState);
 
 if (document.readyState === 'loading') {
     console.log('DOM still loading, waiting for DOMContentLoaded...');
-    document.addEventListener('DOMContentLoaded', initializeLanguageSystem);
+    document.addEventListener('DOMContentLoaded', () => { initializeLanguageSystem(); renderReferences(); });
 } else {
     console.log('DOM already ready, initializing immediately...');
     initializeLanguageSystem();
+    renderReferences();
 } 

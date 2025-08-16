@@ -16,7 +16,7 @@ export const csTexts = {
             course2: "Kurz 2", 
             course3: "Kurz 3"
         },
-        portfolio: "Výsledky práce",
+        portfolio: "Reference",
         contact: "Kontakt"
     },
     breadcrumb: {
@@ -199,12 +199,13 @@ export const csTexts = {
         }
     },
     portfolio: {
-        title: "Výsledky práce",
-        subtitle: "Ukázky našich nejlepších projektů"
+        title: "Reference",
+        subtitle: "Co říkají naši klienti"
     },
     courses: {
         title: "Kurzy",
         subtitle: "Profesionální vzdělávání pro váš úspěch",
+        languageIndicator: "Pouze v ruském jazyce",
         course1: {
             title: "Target Vision",
             description: "Kompletní kurz targetované reklamy pro začátečníky"

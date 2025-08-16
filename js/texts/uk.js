@@ -78,12 +78,13 @@ export const ukTexts = {
         }
     },
     portfolio: {
-        title: "Результати роботи",
-        subtitle: "Приклади наших найкращих проектів"
+        title: "Референси",
+        subtitle: "Що кажуть наші клієнти"
     },
     courses: {
         title: "Курси",
         subtitle: "Професійна освіта для вашого успіху",
+        languageIndicator: "Доступно",
         course1: {
             title: "Курс 1",
             description: "Опис курсу буде додано пізніше"

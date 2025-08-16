@@ -341,6 +341,9 @@ function setLanguage(lang) {
         element.placeholder = value;
     });
 
+    // Update course card states based on language
+    updateCourseCardStates(lang);
+
     // Save language preference
     localStorage.setItem('preferredLanguage', lang);
 }
@@ -359,6 +362,9 @@ setLanguage(savedLang);
 document.addEventListener('DOMContentLoaded', () => {
     // Ensure language is set after DOM is ready
     setLanguage(savedLang);
+    
+    // Initialize course card states
+    updateCourseCardStates(savedLang);
 });
 
 // Add click handlers for language buttons (legacy)
@@ -381,4 +387,79 @@ document.querySelectorAll('.lang-option').forEach(option => {
             dropdown.classList.remove('active');
         }
     });
-}); 
+});
+
+// Function to update course card states based on language
+function updateCourseCardStates(lang) {
+    const courseCards = document.querySelectorAll('.course-card');
+    
+    courseCards.forEach(card => {
+        // Remove existing states
+        card.classList.remove('disabled', 'available');
+        
+        // Remove existing click handlers
+        card.removeEventListener('click', handleDisabledCourseClick);
+        
+        // Check if language is CS or EN (disabled for courses)
+        if (lang === 'cs' || lang === 'en') {
+            card.classList.add('disabled');
+            
+            // Prevent navigation for disabled courses
+            card.addEventListener('click', handleDisabledCourseClick);
+        } else {
+            // RU and UK languages - courses are available
+            card.classList.add('available');
+        }
+    });
+}
+
+// Handler function for disabled course clicks
+function handleDisabledCourseClick(e) {
+    e.preventDefault();
+    const currentLang = localStorage.getItem('preferredLanguage') || 'cs';
+    showCourseUnavailableMessage(currentLang);
+}
+
+// Function to show course unavailable message
+function showCourseUnavailableMessage(lang) {
+    // Create a temporary notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--gradient-gold);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 10000;
+        box-shadow: var(--shadow-lg);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+    `;
+    
+    const message = lang === 'cs' 
+        ? 'Kurzy jsou dostupné pouze v ruštině a ukrajinštině' 
+        : 'Courses are available only in Russian and Ukrainian';
+    
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 10);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+} 

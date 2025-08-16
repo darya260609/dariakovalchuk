@@ -199,12 +199,13 @@ export const enTexts = {
         }
     },
     portfolio: {
-        title: "Portfolio",
-        subtitle: "Showcase of our best projects"
+        title: "References",
+        subtitle: "What our clients say"
     },
     courses: {
         title: "Courses",
         subtitle: "Professional education for your success",
+        languageIndicator: "Only in Russian",
         course1: {
             title: "Target Vision",
             description: "Complete targeted advertising course for beginners"

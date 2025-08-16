@@ -74,7 +74,7 @@
                     <a href="#services" class="nav-link" data-i18n="nav.services">Služby</a>
                     <a href="#courses" class="nav-link" data-i18n="nav.courses">Kurzy</a>
                     
-                    <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Výsledky práce</a>
+                    <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Reference</a>
                     <a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
                     
                     <!-- Language Switcher Dropdown -->
@@ -237,10 +237,11 @@
                 <p class="section-subtitle" data-i18n="courses.subtitle">Profesionální vzdělávání pro váš úspěch</p>
             </div>
             <div class="courses-grid">
-                <a href="courses/course-1.html" class="course-card" data-aos="fade-up" data-aos-delay="100">
+                <a href="courses/course-1.html" class="course-card" data-aos="fade-up" data-aos-delay="100" data-course="course1">
                     <div class="course-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
+                    <div class="language-indicator" data-i18n="courses.languageIndicator">Pouze v ruském jazyce</div>
                     <h3 data-i18n="courses.course1.title">Targeting - Level 1</h3>
                     <p data-i18n="courses.course1.description">Kompletní kurz taргetované reklamy pro začátečníky</p>
                 </a>
@@ -248,68 +249,105 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- References Section (replaces Portfolio) -->
+    <section id="portfolio" class="references">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" data-i18n="portfolio.title">Výsledky práce</h2>
+                <h2 class="section-title" data-i18n="portfolio.title">Reference</h2>
                 <div class="title-line"></div>
-                <p class="section-subtitle" data-i18n="portfolio.subtitle">Ukázky našich nejlepších projektů</p>
+                <p class="section-subtitle" data-i18n="portfolio.subtitle">Co říkají naši klienti</p>
             </div>
-            <div class="portfolio-grid">
-                <!-- Portfolio items with placeholders -->
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-1.jpg" alt="Project 1">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>Brand Design</p>
+            <div class="references-carousel" aria-label="Client references" data-aos="fade-up" data-aos-delay="100">
+                <div class="references-track">
+                    <!-- Set A -->
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">AV</span>
+                            <span class="brand-name">Aveline Couture</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Spolupráce předčila očekávání. Výsledky přišly rychle a v luxusní prezentaci, která přesně sedí naší značce.</p>
+                        <div class="reference-author">— Monika V., CEO</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-2.jpg" alt="Project 2">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>Web Development</p>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">LM</span>
+                            <span class="brand-name">Luminous Med Spa</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Precizní strategie i provedení. Elegantní komunikace, jasná čísla a růst, který je vidět.</p>
+                        <div class="reference-author">— Daniel K., Founder</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-3.jpg" alt="Project 3">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>Digital Marketing</p>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">HB</span>
+                            <span class="brand-name">Hausberg Living</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Skvělé pochopení značky. Každý detail je dotažený a výsledek působí výjimečně profesionálně.</p>
+                        <div class="reference-author">— Tereza N., Marketing Lead</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-4.jpg" alt="Project 4">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>Brand Strategy</p>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">OR</span>
+                            <span class="brand-name">Orion Real Estate</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Luxusní vizuál i výkon. Přivedlo nám to nové klienty v prémiovém segmentu.</p>
+                        <div class="reference-author">— Petr H., Partner</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-5.jpg" alt="Project 5">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>Creative Direction</p>
+                    <!-- Set B (duplicate for seamless loop) -->
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">AV</span>
+                            <span class="brand-name">Aveline Couture</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Spolupráce předčila očekávání. Výsledky přišly rychle a v luxusní prezentaci, která přesně sedí naší značce.</p>
+                        <div class="reference-author">— Monika V., CEO</div>
                     </div>
-                </div>
-                <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="portfolio-image">
-                        <img src="images/gallery-6.jpg" alt="Project 6">
-                        <div class="portfolio-overlay">
-                            <h4>Project Title</h4>
-                            <p>UI/UX Design</p>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">LM</span>
+                            <span class="brand-name">Luminous Med Spa</span>
                         </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Precizní strategie i provedení. Elegantní komunikace, jasná čísla a růst, který je vidět.</p>
+                        <div class="reference-author">— Daniel K., Founder</div>
+                    </div>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">HB</span>
+                            <span class="brand-name">Hausberg Living</span>
+                        </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Skvělé pochopení značky. Každý detail je dotažený a výsledek působí výjimečně profesionálně.</p>
+                        <div class="reference-author">— Tereza N., Marketing Lead</div>
+                    </div>
+                    <div class="reference-card">
+                        <div class="reference-brand">
+                            <span class="brand-badge">OR</span>
+                            <span class="brand-name">Orion Real Estate</span>
+                        </div>
+                        <div class="reference-rating" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="reference-text">Luxusní vizuál i výkon. Přivedlo nám to nové klienty v prémiovém segmentu.</p>
+                        <div class="reference-author">— Petr H., Partner</div>
                     </div>
                 </div>
             </div>
